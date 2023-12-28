@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "economize-hoje",
+    "slug": "economize-hoje",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
