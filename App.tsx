@@ -1,10 +1,12 @@
 import React from "react";
-import { NativeBaseProvider, Center } from "native-base";
+import { NativeBaseProvider } from "native-base";
+
+import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Center>Hello world</Center>
+      <SignIn />
     </NativeBaseProvider>
   );
 }
