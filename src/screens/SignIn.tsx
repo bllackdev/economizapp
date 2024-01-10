@@ -38,12 +38,20 @@ export function SignIn() {
               label='Entrar com Google'
               icon={<FontAwesome name='google' size={24} color='white' />}
               bgColor='blueGray.600'
-              pressedBgColor="blueGray.700"
+              pressedBgColor='blueGray.700'
             />
             {Platform.OS === "ios" ? (
               <Button
                 label='Entrar com Apple'
-                icon={<FontAwesome name='apple' size={24} color='white' />}
+                icon={
+                  <FontAwesome
+                    name='apple'
+                    size={24}
+                    color='white'
+                    bgColor='blueGray.600'
+                    pressedBgColor='blueGray.700'
+                  />
+                }
               />
             ) : null}
           </VStack>
