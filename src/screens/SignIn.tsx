@@ -8,6 +8,7 @@ import {
   VStack,
 } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
+
 import AppIcon from "../assets/icon.png";
 
 import { Button } from "../components/Button";
@@ -37,21 +38,15 @@ export function SignIn() {
             <Button
               label='Entrar com Google'
               icon={<FontAwesome name='google' size={24} color='white' />}
-              bgColor='blueGray.600'
-              pressedBgColor='blueGray.700'
+              bgColor='violet.700'
+              pressedBgColor='violet.800'
             />
             {Platform.OS === "ios" ? (
               <Button
                 label='Entrar com Apple'
-                icon={
-                  <FontAwesome
-                    name='apple'
-                    size={24}
-                    color='white'
-                    bgColor='blueGray.600'
-                    pressedBgColor='blueGray.700'
-                  />
-                }
+                icon={<FontAwesome name='apple' size={24} color='white' />}
+                bgColor='violet.700'
+                pressedBgColor='violet.800'
               />
             ) : null}
           </VStack>

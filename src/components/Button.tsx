@@ -30,6 +30,7 @@ export function Button({
       _pressed={{
         bgColor: `${pressedBgColor}`,
       }}
+      borderRadius='lg'
     >
       {label}
     </NBButton>

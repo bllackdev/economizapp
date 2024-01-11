@@ -14,7 +14,13 @@ export function Summary() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <Center bgColor='gray.700' borderRadius='xl' py={4} w='4/5' mt='8'>
+    <Center
+      bgColor='violet.700:alpha.40'
+      borderRadius='xl'
+      py={4}
+      w='90%'
+      mt='8'
+    >
       <HStack alignItems='center' justifyContent='center' w='full'>
         <Text
           color='white'
@@ -42,14 +48,14 @@ export function Summary() {
 
       <HStack w='full' justifyContent='space-around' alignItems='center' mt='2'>
         <VStack justifyContent='center' alignItems='center'>
-          <Text color='emerald.500'>Receita</Text>
-          <Text color='emerald.500' fontWeight='bold'>
+          <Text color='emerald.400'>Receita</Text>
+          <Text color='emerald.400' fontWeight='bold'>
             R$ {showBalance ? "2.500,00" : "-"}
           </Text>
         </VStack>
         <VStack justifyContent='center' alignItems='center'>
-          <Text color='red.700'>Despesa</Text>
-          <Text color='red.700' fontWeight='bold'>
+          <Text color='red.500'>Despesa</Text>
+          <Text color='red.500' fontWeight='bold'>
             R$ {showBalance ? "- 1.250,00" : "-"}
           </Text>
         </VStack>
