@@ -6,8 +6,11 @@ import {
   IconButton,
   Text,
   VStack,
+  Image,
 } from "native-base";
 import { FontAwesome5 } from "@expo/vector-icons";
+
+import HiIcon from "../assets/hi.gif";
 
 export function Header() {
   return (
@@ -20,7 +23,10 @@ export function Header() {
           RR
         </Avatar>
         <VStack flex={1} ml='2'>
-          <Text color='white'>Olá, </Text>
+          <HStack space={2} alignItems='center'>
+            <Image source={HiIcon} alt='gif de olá' w={6} h={6} />
+            <Text color='white'>Olá, </Text>
+          </HStack>
           <Heading color='white' size='md'>
             Raphael Renato
           </Heading>

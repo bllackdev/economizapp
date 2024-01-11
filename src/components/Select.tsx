@@ -24,6 +24,7 @@ type Props = {
   placeholder: string;
   selectedValue?: string;
   onValueChange?: (value: MonthsProps) => void;
+  textColor?: string;
 };
 
 export function Select({
@@ -31,6 +32,7 @@ export function Select({
   placeholder,
   selectedValue,
   onValueChange,
+  textColor,
 }: Props) {
   return (
     <NBSelect
@@ -38,11 +40,13 @@ export function Select({
       placeholder={placeholder}
       placeholderTextColor='violet.500'
       selectedValue={selectedValue}
-      onValueChange={(itemValue: MonthsProps) => onValueChange(itemValue)}
+      onValueChange={(itemValue: any) => onValueChange(itemValue)}
       bgColor='violet.400:alpha.10'
       borderRadius='lg'
       borderColor='violet.500'
-      
+      w='full'
+      mb={2}
+      color={textColor}
       _selectedItem={{
         bg: "violet.700:alpha.30",
         endIcon: <CheckIcon size='5' />,
@@ -53,9 +57,11 @@ export function Select({
       }}
       _item={{
         bgColor: "gray.700",
+        py: 3,
         _text: { color: "emerald.600", fontSize: "sm" },
         _icon: { color: "emerald.600" },
       }}
+
     >
       {items.map((item) => (
         <NBSelect.Item label={item.label} value={item.label} key={item.label} />
