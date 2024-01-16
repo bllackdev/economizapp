@@ -18,6 +18,8 @@ export function Summary() {
       bgColor='violet.700:alpha.40'
       borderRadius='xl'
       py={4}
+      px={2}
+      pt={2}
       w='90%'
       mt='8'
     >
@@ -26,7 +28,6 @@ export function Summary() {
           color='white'
           fontWeight='bold'
           w='80%'
-          bgColor='amber.500'
           textAlign='center'
           pl='10'
         >
@@ -38,25 +39,26 @@ export function Summary() {
               as={FontAwesome}
               name={`${showBalance ? "eye-slash" : "eye"}`}
               color='white'
-              size={4}
+              size={5}
+              onPress={() => setShowBalance(!showBalance)}
             />
           }
         />
       </HStack>
 
-      <Heading color='white'>R$ {showBalance ? "16.141,00" : "-"}</Heading>
+      <Heading color='white' size='md'>R$ {showBalance ? "16.141,00" : "--"}</Heading>
 
       <HStack w='full' justifyContent='space-around' alignItems='center' mt='2'>
         <VStack justifyContent='center' alignItems='center'>
           <Text color='emerald.400'>Receita</Text>
           <Text color='emerald.400' fontWeight='bold'>
-            R$ {showBalance ? "2.500,00" : "-"}
+            R$ {showBalance ? "2.500,00" : "--"}
           </Text>
         </VStack>
         <VStack justifyContent='center' alignItems='center'>
           <Text color='red.500'>Despesa</Text>
           <Text color='red.500' fontWeight='bold'>
-            R$ {showBalance ? "- 1.250,00" : "-"}
+            R$ {showBalance ? "- 1.250,00" : "--"}
           </Text>
         </VStack>
       </HStack>

@@ -19,21 +19,28 @@ export function Card({
       mt='3'
       borderRadius='xl'
       shadow='1'
-      borderWidth={1}
-      borderColor={type === "up" ? "emerald.700" : "red.700"}
+      borderWidth={2}
+      borderColor='violet.700'
       style={{
         shadowRadius: 8,
       }}
     >
-      <VStack>
-        <Heading color='gray.900' fontSize='md'>
-          {label}
-        </Heading>
-        <Text color={type === "up" ? "emerald.500" : "red.500"} fontSize='md'>
-          R$ {value}
-        </Text>
-      </VStack>
-      <HStack justifyContent='space-between' mt='2'>
+      <HStack justifyContent='space-between' alignItems='center'>
+        <VStack>
+          <Heading color='gray.900' fontSize='md'>
+            {label}
+          </Heading>
+          <Text color={type === "up" ? "emerald.500" : "red.500"} fontSize='md'>
+            R$ {value}
+          </Text>
+        </VStack>
+        <VStack h='full' >
+          <Text color='gray.700' fontSize='xs'>
+            {date}
+          </Text>
+        </VStack>
+      </HStack>
+      {/* <HStack justifyContent='space-between' mt='2'>
         <HStack justifyContent='center' alignItems='center'>
           {type === "up" ? (
             <Icon
@@ -56,7 +63,7 @@ export function Card({
         <Text color='gray.700' fontSize='xs'>
           {date}
         </Text>
-      </HStack>
+      </HStack> */}
     </VStack>
   );
 }

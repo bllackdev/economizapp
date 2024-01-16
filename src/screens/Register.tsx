@@ -43,15 +43,15 @@ export function Register() {
   }
 
   return (
-    <VStack flex={1} bg='gray.200'>
+    <VStack flex={1} bg='gray.900'>
       <VStack
-        bg='gray.900'
+        
         w='full'
         p={8}
         justifyContent='center'
         alignItems='center'
       >
-        <Heading color='green.700' fontSize='xl'>
+        <Heading color='violet.700' fontSize='xl'>
           Lançamento
         </Heading>
       </VStack>
@@ -60,6 +60,8 @@ export function Register() {
         flex={1}
         contentContainerStyle={{ flexGrow: 1, justifyContent: "space-between" }}
         showsVerticalScrollIndicator={false}
+        borderTopRadius='3xl'
+        bg='white'
       >
         <VStack flex={1} p={8} space='4'>
           <Input placeholder='Nome' />

@@ -5,18 +5,18 @@ import { Listing } from "../components/Listing";
 
 export function Home() {
   return (
-    <VStack flex={1} bg='gray.200'>
+    <VStack flex={1} bg='gray.900'>
       <VStack
-        bg='gray.900'
         w='full'
-        p={8}
+        px={8}
+        py={5}
         justifyContent='center'
         alignItems='center'
       >
         <Header />
         <Summary />
       </VStack>
-      <VStack flex={1} p={8}>
+      <VStack flex={1} p={8} pb={0} borderTopRadius='24' bg='white'>
         <Listing />
       </VStack>
     </VStack>

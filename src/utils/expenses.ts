@@ -12,9 +12,9 @@ export const EXPENSES = {
     },
     {
       id: "5",
-      label: "Pizza",
+      label: "Salário",
       type: "up",
-      value: 60,
+      value: 5000,
       color: "#55C5FE",
       percent: "5%",
       date: "2021-05-22"
