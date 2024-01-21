@@ -1,7 +1,7 @@
-import { Button as NBButton } from "native-base";
+import { Button as NBButton, IButtonProps } from "native-base";
 
-type ButtonProps = {
-  label: string;
+type ButtonProps = IButtonProps & {
+  label?: string;
   variant?: "solid" | "outline";
   isLoading?: boolean;
   icon?: JSX.Element[] | JSX.Element;
@@ -16,6 +16,7 @@ export function Button({
   icon,
   bgColor,
   pressedBgColor,
+  ...rest
 }: ButtonProps) {
   return (
     <NBButton
@@ -31,6 +32,7 @@ export function Button({
         bgColor: `${pressedBgColor}`,
       }}
       borderRadius='lg'
+      {...rest}
     >
       {label}
     </NBButton>

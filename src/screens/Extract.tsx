@@ -39,7 +39,7 @@ export function Extract() {
           onValueChange={setMonth}
         />
       </Center>
-      <VStack flex={1} px={8} py={4} bg='white' borderTopRadius='3xl'>
+      <VStack flex={1} px={8} pt={4} bg='white' borderTopRadius='3xl'>
         <HStack justifyContent='space-between' alignItems='center' pb={2}>
           <Text color='emerald.500'>R$ 530,00</Text>
           <Text color='gray.900'>R$ 130,00</Text>

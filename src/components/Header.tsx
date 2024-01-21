@@ -22,12 +22,12 @@ export function Header() {
         >
           RR
         </Avatar>
-        <VStack flex={1} ml='2'>
+        <VStack flex={1} ml='2' justifyContent='center'>
           <HStack space={2} alignItems='center'>
-            <Image source={HiIcon} alt='gif de olá' w={6} h={6} />
+            <Image source={HiIcon} alt='gif de olá' w={5} h={5} />
             <Text color='white'>Olá, </Text>
           </HStack>
-          <Heading color='white' size='md'>
+          <Heading color='white' size='sm'>
             Raphael Renato
           </Heading>
         </VStack>

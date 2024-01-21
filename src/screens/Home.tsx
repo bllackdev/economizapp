@@ -16,7 +16,7 @@ export function Home() {
         <Header />
         <Summary />
       </VStack>
-      <VStack flex={1} p={8} pb={0} borderTopRadius='24' bg='white'>
+      <VStack flex={1} px={8} pt={6} pb={0} borderTopRadius='24' bg='white'>
         <Listing />
       </VStack>
     </VStack>

@@ -1,6 +1,6 @@
-import { Input as NBInput } from "native-base";
+import { Input as NBInput, IInputProps } from "native-base";
 
-type Props = {
+type Props = IInputProps & {
   width?: string;
   placeholder: string;
   value?: string;
@@ -31,6 +31,7 @@ export function Input({
   isDisabled = false,
   isInvalid = false,
   keyboardType = "default",
+  ...rest
 }: Props) {
   return (
     <NBInput
@@ -54,6 +55,7 @@ export function Input({
         borderWidth: 1,
         borderColor: "green.600",
       }}
+      {...rest}
     />
   );
 }

@@ -18,6 +18,9 @@ type AppUserRoutesParamList = {
   resume: undefined;
 };
 
+export type AppUserRoutesParamListProps =
+  BottomTabNavigationProp<AppUserRoutesParamList>;
+
 export function AppUserRoutes() {
   const { Navigator, Screen } =
     createBottomTabNavigator<AppUserRoutesParamList>();
@@ -85,7 +88,11 @@ export function AppUserRoutes() {
         options={{
           tabBarLabel: "Resumo",
           tabBarIcon: ({ color, size }) => (
-            <Icon as={<FontAwesome name='pie-chart' />} color={color} size={size} />
+            <Icon
+              as={<FontAwesome name='pie-chart' />}
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
