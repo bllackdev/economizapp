@@ -6,14 +6,103 @@ import {
   Image,
   Text,
   VStack,
+  IconButton,
+  useToast,
 } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import auth from "@react-native-firebase/auth";
+import { AuthNavigatorRoutesProps } from "../routes/auth.routes";
 
-import AppIcon from "../assets/icon.png";
+import { useAuth } from "../hooks/auth";
 
 import { Button } from "../components/Button";
 
+import AppIcon from "../assets/icon.png";
+import {
+  GoogleSignin,
+  statusCodes,
+} from "@react-native-google-signin/google-signin";
+import { useState } from "react";
+
 export function SignIn() {
+  const toast = useToast();
+
+  const [isLogging, setIsLogging] = useState(false);
+
+  async function onGoogle() {
+    // Check if your device supports Google Play
+    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
+
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(googleCredential);
+  }
+
+  async function handleSignIn() {
+    setIsLogging(true);
+
+    try {
+      // Check if your device supports Google Play
+      await GoogleSignin.hasPlayServices({
+        showPlayServicesUpdateDialog: true,
+      });
+      // Get the users ID token
+      const { idToken, user } = await GoogleSignin.signIn();
+
+      // Create a Google credential with the token
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      console.log("GOOGLE CREDENTIAL: ", googleCredential);
+      console.log("USER>>>>>>>>>: ", user);
+      // Sign-in the user with the credential
+      return auth().signInWithCredential(googleCredential);
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        // user cancelled the login flow
+        toast.show({
+          title: "Login cancelado",
+          placement: "top",
+          bgColor: "red.500",
+          duration: 6000,
+        });
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        // operation (e.g. sign in) is in progress already
+        toast.show({
+          title: "Login em progresso",
+          description: "Você já está logado com o Google",
+          placement: "top",
+          bgColor: "red.500",
+          duration: 6000,
+        });
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        // play services not available or outdated
+        toast.show({
+          title: "Serviços do Google",
+          description: "Os serviços do Google não estão disponíveis",
+          placement: "top",
+          bgColor: "red.500",
+          duration: 6000,
+        });
+      } else {
+        // some other error happened
+        toast.show({
+          title: "Erro ao logar",
+          description: "Ocorreu um erro ao tentar fazer login",
+          placement: "top",
+          bgColor: "red.500",
+          duration: 6000,
+        });
+      }
+    } finally {
+      setIsLogging(false);
+    }
+  }
+
   return (
     <VStack
       flex={1}
@@ -40,6 +129,8 @@ export function SignIn() {
               icon={<FontAwesome name='google' size={24} color='white' />}
               bgColor='violet.700'
               pressedBgColor='violet.800'
+              onPress={() => handleSignIn()}
+              isLoading={isLogging}
             />
             {Platform.OS === "ios" ? (
               <Button

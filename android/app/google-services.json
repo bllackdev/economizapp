@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "333799507734",
+    "project_id": "economize-hoje-af5db",
+    "storage_bucket": "economize-hoje-af5db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:333799507734:android:21881a7bde6451aef23237",
+        "android_client_info": {
+          "package_name": "com.economizehoje"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "333799507734-pjrim7v2q6up85qft174gmkrqlug7pq5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.economizehoje",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "333799507734-uqn3eadqqd9r7n6ash09bjermad1uin3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXVuu0a5pCIJh3m4Llf-1wI34a1bSGRnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "333799507734-uqn3eadqqd9r7n6ash09bjermad1uin3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
