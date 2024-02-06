@@ -1,43 +1,34 @@
 import { useState } from "react";
+import { HStack, Icon, IconButton, Text, VStack } from "native-base";
 import {
-  Center,
-  HStack,
-  Heading,
-  Icon,
-  IconButton,
-  Text,
-  VStack,
-} from "native-base";
-import { FontAwesome } from "@expo/vector-icons";
+  AntDesign,
+  MaterialCommunityIcons,
+  MaterialIcons,
+  FontAwesome,
+} from "@expo/vector-icons";
 
 export function Summary() {
   const [showBalance, setShowBalance] = useState(true);
+  const currentMonth = new Date().toLocaleString("pt-BR", { month: "long" });
 
   return (
-    <Center
-      bgColor='violet.700:alpha.40'
-      borderRadius='xl'
-      py={4}
-      px={2}
-      pt={2}
-      w='90%'
-      mt='8'
-    >
-      <HStack alignItems='center' justifyContent='center' w='full'>
+    <VStack mt={4} justifyContent='center' alignItems='center' w='xs'>
+      <HStack justifyContent='center' alignItems='center' w='xs'>
         <Text
           color='white'
+          fontSize='lg'
           fontWeight='bold'
-          w='80%'
           textAlign='center'
-          pl='10'
+          textTransform='capitalize'
+          mr={2}
         >
-          Saldo
+          {currentMonth}
         </Text>
         <IconButton
           icon={
             <Icon
               as={FontAwesome}
-              name={`${showBalance ? "eye-slash" : "eye"}`}
+              name={`${showBalance ? "eye" : "eye-slash"}`}
               color='white'
               size={5}
               onPress={() => setShowBalance(!showBalance)}
@@ -45,23 +36,68 @@ export function Summary() {
           }
         />
       </HStack>
-
-      <Heading color='white' size='md'>R$ {showBalance ? "16.141,00" : "--"}</Heading>
-
-      <HStack w='full' justifyContent='space-around' alignItems='center' mt='2'>
-        <VStack justifyContent='center' alignItems='center'>
-          <Text color='emerald.400'>Receita</Text>
-          <Text color='emerald.400' fontWeight='bold'>
-            R$ {showBalance ? "2.500,00" : "--"}
-          </Text>
+      <HStack p={2} justifyContent='center' alignItems='flex-start'>
+        <VStack space={4} alignItems='center' justifyContent='center' mr={8}>
+          <VStack>
+            <HStack space={2} justifyContent='center' alignItems='center'>
+              <Icon
+                color='white'
+                as={<MaterialCommunityIcons name='bank-outline' size={24} />}
+              />
+              <Text color='white' textAlign='center'>
+                Saldo
+              </Text>
+            </HStack>
+            <Text color='white' fontWeight='bold'>
+              R$ {showBalance ? "16.141,00" : "--"}
+            </Text>
+          </VStack>
+          <VStack>
+            <HStack space={2} justifyContent='center' alignItems='center'>
+              <Icon
+                color='violet.500'
+                as={<AntDesign name='creditcard' size={24} />}
+              />
+              <Text color='violet.400' textAlign='center'>
+                Cartões
+              </Text>
+            </HStack>
+            <Text color='violet.400' fontWeight='bold'>
+              R$ {showBalance ? "2.500,00" : "--"}
+            </Text>
+          </VStack>
         </VStack>
-        <VStack justifyContent='center' alignItems='center'>
-          <Text color='red.500'>Despesa</Text>
-          <Text color='red.500' fontWeight='bold'>
-            R$ {showBalance ? "- 1.250,00" : "--"}
-          </Text>
+        <VStack space={4} alignItems='center' justifyContent='center'>
+          <VStack alignItems='center' justifyContent='center'>
+            <HStack space={2} justifyContent='center' alignItems='center'>
+              <Icon
+                color='emerald.500'
+                as={<MaterialCommunityIcons name='cash-multiple' size={24} />}
+              />
+              <Text color='emerald.500' textAlign='center'>
+                Receita
+              </Text>
+            </HStack>
+            <Text color='emerald.400' fontWeight='bold'>
+              R$ {showBalance ? "2.500,00" : "--"}
+            </Text>
+          </VStack>
+          <VStack alignItems='center' justifyContent='center'>
+            <HStack space={2} justifyContent='center' alignItems='center'>
+              <Icon
+                color='red.500'
+                as={<MaterialIcons name='money-off' size={24} />}
+              />
+              <Text color='red.500' textAlign='center'>
+                Despesas
+              </Text>
+            </HStack>
+            <Text color='red.500' fontWeight='bold'>
+              R$ {showBalance ? "- 2.500,00" : "--"}
+            </Text>
+          </VStack>
         </VStack>
       </HStack>
-    </Center>
+    </VStack>
   );
 }

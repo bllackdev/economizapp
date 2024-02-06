@@ -1,8 +1,8 @@
-import { VStack } from "native-base";
+import { Text, VStack } from "native-base";
 
 import { Header } from "../components/Header";
-import { Summary } from "../components/Summary";
 import { Listing } from "../components/Listing";
+import { Summary } from "../components/Summary";
 
 export function Home() {
   return (

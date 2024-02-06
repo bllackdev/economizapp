@@ -4,15 +4,17 @@ import {
   BottomTabNavigationProp,
 } from "@react-navigation/bottom-tabs";
 import { Icon, useToken } from "native-base";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome, Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 
 import { Home } from "../screens/Home";
 import { Register } from "../screens/Register";
 import { Extract } from "../screens/Extract";
 import { Resume } from "../screens/Resume";
+import { CreditCards } from "../screens/CreditCards";
 
 type AppUserRoutesParamList = {
   home: undefined;
+  creditCards: undefined;
   register: undefined;
   extract: undefined;
   resume: undefined;
@@ -25,7 +27,7 @@ export function AppUserRoutes() {
   const { Navigator, Screen } =
     createBottomTabNavigator<AppUserRoutesParamList>();
 
-  const violetColor = useToken("colors", "violet.700");
+  const violetColor = useToken("colors", "violet.500");
   const emeraldColor = useToken("colors", "emerald.500");
 
   return (
@@ -38,13 +40,15 @@ export function AppUserRoutes() {
         tabBarShowLabel: false,
         tabBarStyle: {
           borderTopWidth: 0,
-          height: Platform.OS === "android" ? 50 : 96,
+          height: Platform.OS === "android" ? 60 : 96,
           paddingBottom: 4,
           paddingTop: 4,
           marginHorizontal: 12,
           marginBottom: 8,
           backgroundColor: "#18181b",
           borderRadius: 40,
+          justifyContent: "center",
+          alignItems: "center",
         },
       }}
     >
@@ -59,16 +63,26 @@ export function AppUserRoutes() {
         }}
       />
       <Screen
+        name='creditCards'
+        component={CreditCards}
+        options={{
+          tabBarLabel: "Cartões",
+          tabBarIcon: ({ color, size }) => (
+            <Icon
+              as={<Entypo name='credit-card' />}
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
+      <Screen
         name='register'
         component={Register}
         options={{
           tabBarLabel: "Cadastrar",
           tabBarIcon: ({ color, size }) => (
-            <Icon
-              as={<FontAwesome name='plus-circle' />}
-              color={color}
-              size={size}
-            />
+            <Icon as={<AntDesign name='pluscircleo' />} color={color} size={10} />
           ),
         }}
       />
@@ -78,7 +92,11 @@ export function AppUserRoutes() {
         options={{
           tabBarLabel: "Resumo",
           tabBarIcon: ({ color, size }) => (
-            <Icon as={<FontAwesome name='list' />} color={color} size={size} />
+            <Icon
+              as={<Ionicons name='swap-horizontal-sharp' />}
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
