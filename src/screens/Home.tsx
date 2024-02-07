@@ -3,6 +3,7 @@ import { Text, VStack } from "native-base";
 import { Header } from "../components/Header";
 import { Listing } from "../components/Listing";
 import { Summary } from "../components/Summary";
+import { CreditCardsContainer } from "../components/CreditCardsContainer";
 
 export function Home() {
   return (
@@ -17,8 +18,9 @@ export function Home() {
         <Header />
         <Summary />
       </VStack>
-      <VStack flex={1} px={8} pt={6} pb={0} borderTopRadius='24' bg='white'>
-        <Listing />
+      <VStack flex={1} px={6} pt={6} pb={0} borderTopRadius='24' bg='white'>
+        <CreditCardsContainer />
+        {/* <Listing /> */}
       </VStack>
     </VStack>
   );
