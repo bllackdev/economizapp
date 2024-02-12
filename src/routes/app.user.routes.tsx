@@ -29,7 +29,7 @@ export function AppUserRoutes() {
 
   const violetColor = useToken("colors", "violet.500");
   const emeraldColor = useToken("colors", "emerald.500");
-
+  
   return (
     <Navigator
       screenOptions={{
@@ -82,7 +82,11 @@ export function AppUserRoutes() {
         options={{
           tabBarLabel: "Cadastrar",
           tabBarIcon: ({ color, size }) => (
-            <Icon as={<AntDesign name='pluscircleo' />} color={color} size={10} />
+            <Icon
+              as={<AntDesign name='pluscircleo' />}
+              color={color}
+              size={10}
+            />
           ),
         }}
       />

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { HStack, Icon, IconButton, Text, VStack } from "native-base";
 import {
   AntDesign,
@@ -7,31 +6,39 @@ import {
   FontAwesome,
 } from "@expo/vector-icons";
 
-export function Summary() {
-  const [showBalance, setShowBalance] = useState(true);
+type Props = {
+  showValues: boolean;
+  setShowValues: (value: boolean) => void;
+};
+
+export function Summary({ showValues, setShowValues }: Props) {
   const currentMonth = new Date().toLocaleString("pt-BR", { month: "long" });
 
   return (
     <VStack mt={4} justifyContent='center' alignItems='center' w='xs'>
-      <HStack justifyContent='center' alignItems='center' w='xs'>
-        <Text
-          color='white'
-          fontSize='lg'
-          fontWeight='bold'
-          textAlign='center'
-          textTransform='capitalize'
-          mr={2}
-        >
-          {currentMonth}
-        </Text>
+      <HStack justifyContent='center' alignItems='center' w='xs' ml={12}>
+        <HStack justifyContent='center' alignItems='flex-end'>
+          <Text color='white' fontSize='md' textAlign='center' mr={1}>
+            resumo de
+          </Text>
+          <Text
+            color='white'
+            fontSize='lg'
+            fontWeight='bold'
+            textTransform='capitalize'
+            mr={2}
+          >
+            {currentMonth}
+          </Text>
+        </HStack>
         <IconButton
           icon={
             <Icon
               as={FontAwesome}
-              name={`${showBalance ? "eye" : "eye-slash"}`}
+              name={`${showValues ? "eye" : "eye-slash"}`}
               color='white'
               size={5}
-              onPress={() => setShowBalance(!showBalance)}
+              onPress={() => setShowValues(!showValues)}
             />
           }
         />
@@ -49,7 +56,7 @@ export function Summary() {
               </Text>
             </HStack>
             <Text color='white' fontWeight='bold'>
-              R$ {showBalance ? "16.141,00" : "--"}
+              R$ {showValues ? "16.141,00" : "--"}
             </Text>
           </VStack>
           <VStack>
@@ -63,7 +70,7 @@ export function Summary() {
               </Text>
             </HStack>
             <Text color='violet.400' fontWeight='bold'>
-              R$ {showBalance ? "2.500,00" : "--"}
+              R$ {showValues ? "2.500,00" : "--"}
             </Text>
           </VStack>
         </VStack>
@@ -79,7 +86,7 @@ export function Summary() {
               </Text>
             </HStack>
             <Text color='emerald.400' fontWeight='bold'>
-              R$ {showBalance ? "2.500,00" : "--"}
+              R$ {showValues ? "2.500,00" : "--"}
             </Text>
           </VStack>
           <VStack alignItems='center' justifyContent='center'>
@@ -93,7 +100,7 @@ export function Summary() {
               </Text>
             </HStack>
             <Text color='red.500' fontWeight='bold'>
-              R$ {showBalance ? "- 2.500,00" : "--"}
+              R$ {showValues ? "- 2.500,00" : "--"}
             </Text>
           </VStack>
         </VStack>

@@ -1,10 +1,11 @@
-import { Divider, HStack, Heading, Image, Text, VStack } from "native-base";
+import { HStack, Heading, Image, Text, VStack } from "native-base";
 
 type Props = {
   bankName?: string;
   closingDay?: number;
   invoiceValue?: number;
   limit?: number;
+  showValues: boolean;
 };
 
 export function CreditCard({
@@ -12,9 +13,10 @@ export function CreditCard({
   closingDay,
   invoiceValue,
   limit,
+  showValues,
 }: Props) {
   return (
-    <VStack space={1} mb={2}>
+    <VStack space={1} mb={2} px={2}>
       <HStack justifyContent='space-between' alignItems='center'>
         <HStack space={2} alignItems='center'>
           <Image
@@ -30,10 +32,10 @@ export function CreditCard({
       </HStack>
       <HStack justifyContent='space-between' alignItems='center' ml={0.5}>
         <Text color='gray.500' fontSize='xs' fontWeight='bold'>
-          Fatura: R$ 2.000,00
+          Fatura: R$ {showValues ? '2.000,00' : '--'}
         </Text>
         <Text color='gray.500' fontSize='xs'>
-          Limite: R$ 8.000,00
+          Limite: R$ {showValues ? '8.000,00' : '--'}
         </Text>
       </HStack>
     </VStack>

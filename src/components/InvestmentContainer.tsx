@@ -1,13 +1,13 @@
 import { Divider, HStack, Heading, Icon, Text, VStack } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 
-import { CreditCard } from "./CreditCard";
+import { InvestmentCard } from "./InvestmentCard";
 
 type Props = {
   showValues: boolean;
 };
 
-export function CreditCardsContainer({ showValues }: Props) {
+export function InvestmentContainer({ showValues }: Props) {
   return (
     <VStack
       borderRadius='lg'
@@ -16,20 +16,20 @@ export function CreditCardsContainer({ showValues }: Props) {
       p={2}
     >
       <HStack justifyContent='space-between' alignItems='center'>
-        <Heading size='xs'>Cartões de crédito</Heading>
-        <Icon color='gray.900' as={<AntDesign name='creditcard' size={24} />} />
+        <Heading size='xs'>Investimentos</Heading>
+        <Icon color='gray.900' as={<AntDesign name='linechart' size={24} />} />
       </HStack>
 
       <Divider color='gray.900' my={2} />
 
       <VStack space={2}>
         {/* FlatList */}
-        <CreditCard showValues={showValues} />
+        <InvestmentCard showValues={showValues} />
       </VStack>
       {/* <HStack py={4} justifyContent='center' alignItems='center' >
         <Text color='gray.500' fontSize='sm' textAlign='center'>
-          Nenhum cartão cadastrado.{'\n'}
-          Cadastre e controle suas faturas! 💳
+          Nenhum investimento cadastrado.{'\n'}
+          Invista e veja seu dinheiro render! 💸
         </Text>
       </HStack> */}
     </VStack>
