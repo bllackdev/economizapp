@@ -14,6 +14,7 @@ export function InvestmentContainer({ showValues }: Props) {
       borderWidth={1}
       borderColor='gray.900:alpha.40'
       p={2}
+      mb={3}
     >
       <HStack justifyContent='space-between' alignItems='center'>
         <Heading size='xs'>Investimentos</Heading>
@@ -22,7 +23,7 @@ export function InvestmentContainer({ showValues }: Props) {
 
       <Divider color='gray.900' my={2} />
 
-      <VStack space={2}>
+      <VStack space={2} mt={1}>
         {/* FlatList */}
         <InvestmentCard showValues={showValues} />
       </VStack>

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Text, VStack } from "native-base";
+import { ScrollView, VStack } from "native-base";
 
 import { Header } from "../components/Header";
-import { Listing } from "../components/Listing";
 import { Summary } from "../components/Summary";
 import { CreditCardsContainer } from "../components/CreditCardsContainer";
 import { InvestmentContainer } from "../components/InvestmentContainer";
+import { NextPayments } from "../components/NextPayments";
 
 export function Home() {
   const [showBalance, setShowBalance] = useState(true);
@@ -22,19 +22,20 @@ export function Home() {
         <Header />
         <Summary showValues={showBalance} setShowValues={setShowBalance} />
       </VStack>
-      <VStack
+      <ScrollView
         flex={1}
         px={6}
         pt={6}
-        pb={0}
+        pb={6}
         borderTopRadius='24'
         bg='white'
-        space={3}
+        showsVerticalScrollIndicator={false}
+        
       >
         <CreditCardsContainer showValues={showBalance} />
         <InvestmentContainer showValues={showBalance} />
-        {/* <Listing /> */}
-      </VStack>
+        <NextPayments showValues={showBalance} />
+      </ScrollView>
     </VStack>
   );
 }
