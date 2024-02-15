@@ -7,52 +7,49 @@ import {
   IconButton,
   ScrollView,
   Stack,
+  Switch,
+  Text,
   VStack,
 } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { CATEGORIES } from "../utils/categories";
 
 import { Input } from "../components/Input";
 import { ButtonTransition } from "../components/ButtonTransition";
 import { Button } from "../components/Button";
 import { Select } from "../components/Select";
 
-const items = [
-  { label: "Item 1", value: "item-1" },
-  { label: "Item 2", value: "item-2" },
-  { label: "Item 3", value: "item-3" },
-  { label: "Item 4", value: "item-4" },
-  { label: "Item 5", value: "item-5" },
-  { label: "Item 6", value: "item-3" },
-];
-
 export function Register() {
   const [transactionType, setTransactionType] = useState("down");
   const [category, setCategory] = useState("");
   const [date, setDate] = useState(new Date());
   const [show, setShow] = useState(false);
-
+  const [isInstallment, setIsInstallment] = useState(false);
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate;
-    setShow(Platform.OS === 'ios');
+    setShow(Platform.OS === "ios");
     setDate(currentDate);
   };
 
-  function handleTransactionTypeSelect(type: "up" | "down") {
+  function handleTransactionTypeSelect(type: "up" | "down" | "invest") {
     setTransactionType(type);
   }
 
   return (
     <VStack flex={1} bg='gray.900'>
       <VStack
-        
         w='full'
-        p={8}
+        px={8}
+        py={4}
         justifyContent='center'
         alignItems='center'
       >
-        <Heading color='violet.700' fontSize='xl'>
-          Lançamento
+        <Text color='violet.700' fontSize='sm'>
+          Cadastre seus
+        </Text>
+        <Heading color='violet.700' fontSize='lg'>
+          Lançamentos
         </Heading>
       </VStack>
 
@@ -64,28 +61,67 @@ export function Register() {
         bg='white'
       >
         <VStack flex={1} p={8} space='4'>
+          <VStack>
+            <HStack justifyContent='space-between' space={2}>
+              <ButtonTransition
+                label='Receita'
+                type='up'
+                isActive={transactionType === "up"}
+                onPress={() => handleTransactionTypeSelect("up")}
+              />
+              <ButtonTransition
+                label='Despesa'
+                type='down'
+                isActive={transactionType === "down"}
+                onPress={() => handleTransactionTypeSelect("down")}
+              />
+              <ButtonTransition
+                label='Investimento'
+                type='invest'
+                isActive={transactionType === "invest"}
+                onPress={() => handleTransactionTypeSelect("invest")}
+              />
+            </HStack>
+            {transactionType === "invest" && (
+              <HStack space={1} alignItems='center' mt={1} px={1}>
+                <Icon
+                  as={FontAwesome}
+                  name='info-circle'
+                  color='violet.700'
+                  size={3}
+                />
+                <Text color='violet.700' fontSize='2xs'>
+                  Investimento não é despesa e nem receita
+                </Text>
+              </HStack>
+            )}
+          </VStack>
           <Input placeholder='Nome' />
-          <Input placeholder='Preço' keyboardType="numeric"/>
-          <Input placeholder='Parcelas' keyboardType="numeric" />
-          <HStack justifyContent='space-between'>
-            <ButtonTransition
-              label='Receita'
-              type='up'
-              isActive={transactionType === "up"}
-              onPress={() => handleTransactionTypeSelect("up")}
+          <Input placeholder='Preço' keyboardType='numeric' />
+          <HStack alignItems='center' space={4} px={2}>
+            <Text color='violet.700'>Parcelado</Text>
+            <Switch
+              size='sm'
+              mr={4}
+              onTrackColor='violet.500'
+              onThumbColor='violet.300'
+              offThumbColor='violet.300'
+              value={isInstallment}
+              onToggle={() => {
+                setIsInstallment(!isInstallment);
+              }}
             />
-            <ButtonTransition
-              label='Despesa'
-              type='down'
-              isActive={transactionType === "down"}
-              onPress={() => handleTransactionTypeSelect("down")}
-            />
+            {isInstallment && (
+              <Input placeholder='Parcelas' keyboardType='numeric' width='32' />
+            )}
           </HStack>
+
           <Select
-            items={items}
+            items={CATEGORIES}
             placeholder='Categoria'
             selectedValue={category}
             onValueChange={setCategory}
+            textColor='violet.700'
           />
           <HStack w='full' space={2}>
             <IconButton
@@ -110,7 +146,6 @@ export function Register() {
               display='spinner'
               minimumDate={new Date(2020, 0, 1)}
               onChange={onChange}
-              
             />
           )}
         </VStack>

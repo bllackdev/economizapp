@@ -1,4 +1,6 @@
-import { CheckIcon, Select as NBSelect } from "native-base";
+import React from "react";
+import { CheckIcon, Icon, Select as NBSelect } from "native-base";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export type MonthsProps =
   | "Janeiro"
@@ -17,6 +19,7 @@ export type MonthsProps =
 type Item = {
   label: string;
   value: string;
+  icon?: string;
 };
 
 type Props = {
@@ -38,15 +41,15 @@ export function Select({
     <NBSelect
       accessibilityLabel='Selecione a categoria'
       placeholder={placeholder}
-      placeholderTextColor='violet.500'
+      placeholderTextColor='violet.200'
       selectedValue={selectedValue}
       onValueChange={(itemValue: any) => onValueChange(itemValue)}
-      bgColor='violet.400:alpha.10'
       borderRadius='lg'
       borderColor='violet.500'
       w='full'
       mb={2}
       color={textColor}
+      fontSize='sm'
       _selectedItem={{
         bg: "violet.700:alpha.30",
         endIcon: <CheckIcon size='5' />,
@@ -56,15 +59,24 @@ export function Select({
         bgColor: "gray.700",
       }}
       _item={{
+        justifyContent: "center",
         bgColor: "gray.700",
         py: 3,
-        _text: { color: "emerald.600", fontSize: "sm" },
-        _icon: { color: "emerald.600" },
+        _text: { color: "white", fontSize: "sm", fontWeight: "700" },
+        _icon: { color: "white", size: "5" },
       }}
-
     >
       {items.map((item) => (
-        <NBSelect.Item label={item.label} value={item.label} key={item.label} />
+        <NBSelect.Item
+          label={item.label}
+          value={item.label}
+          key={item.label}
+          leftIcon={<Icon as={MaterialCommunityIcons} name={item.icon} />}
+          borderRadius='lg'
+          borderWidth={1}
+          borderColor='violet.500'
+          mb={2}
+        />
       ))}
     </NBSelect>
   );

@@ -14,6 +14,7 @@ export function CreditCardsContainer({ showValues }: Props) {
       borderWidth={1}
       borderColor='gray.900:alpha.40'
       p={2}
+      mb={3}
     >
       <HStack justifyContent='space-between' alignItems='center'>
         <Heading size='xs'>Cartões de crédito</Heading>

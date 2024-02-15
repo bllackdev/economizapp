@@ -63,13 +63,13 @@ export function Summary({ showValues, setShowValues }: Props) {
             <HStack space={2} justifyContent='center' alignItems='center'>
               <Icon
                 color='violet.500'
-                as={<AntDesign name='creditcard' size={24} />}
+                as={<MaterialCommunityIcons name='party-popper' size={24} />}
               />
               <Text color='violet.400' textAlign='center'>
-                Cartões
+                Desp. pagas
               </Text>
             </HStack>
-            <Text color='violet.400' fontWeight='bold'>
+            <Text color='violet.400' fontWeight='bold' textAlign='center'>
               R$ {showValues ? "2.500,00" : "--"}
             </Text>
           </VStack>

@@ -40,12 +40,13 @@ export function Input({
       value={value}
       isReadOnly={isReadOnly}
       isDisabled={isDisabled}
-      bgColor='violet.400:alpha.10'
-      placeholderTextColor='violet.500'
+      placeholderTextColor='violet.200'
       borderColor='violet.500'
       isInvalid={isInvalid}
       borderRadius='lg'
       keyboardType={keyboardType}
+      color={"violet.700"}
+      fontSize='sm'
       _invalid={{
         borderWidth: 1,
         borderColor: "red.500",
@@ -53,7 +54,7 @@ export function Input({
       _focus={{
         bg: null,
         borderWidth: 1,
-        borderColor: "green.600",
+        borderColor: "green.500",
       }}
       {...rest}
     />

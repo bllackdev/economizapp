@@ -57,16 +57,16 @@ export function Header() {
 
   return (
     <HStack bg='gray.900' justifyContent='space-between' alignItems='center'>
-      <HStack flex={1} space={2}>
-        <Avatar source={{ uri: photoURL }} bgColor='blueGray.600'>
+      <HStack flex={1} space={2} alignItems='center'>
+        <Avatar source={{ uri: photoURL }} bgColor='blueGray.600' size='xs'>
           RR
         </Avatar>
         <VStack flex={1} ml='2' justifyContent='center'>
           <HStack space={2} alignItems='center'>
-            <Image source={HiIcon} alt='gif de olá' w={5} h={5} />
-            <Text color='white'>Olá, </Text>
+            <Image source={HiIcon} alt='gif de olá' w={3} h={3} />
+            <Text color='white' fontSize='xs'>Olá, </Text>
           </HStack>
-          <Heading color='white' size='sm'>
+          <Heading color='white' fontSize='xs'>
             {displayName}
           </Heading>
         </VStack>
@@ -77,7 +77,7 @@ export function Header() {
             as={FontAwesome5}
             name='power-off'
             color='emerald.500'
-            size={5}
+            size={4}
             onPress={() => setIsOpen(!isOpen)}
           />
         }
