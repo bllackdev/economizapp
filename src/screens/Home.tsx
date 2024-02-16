@@ -14,13 +14,13 @@ export function Home() {
     <VStack flex={1} bg='gray.900'>
       <VStack
         w='full'
-        px={8}
+        px={6}
         py={5}
         justifyContent='center'
         alignItems='center'
       >
-        <Header />
-        <Summary showValues={showBalance} setShowValues={setShowBalance} />
+        <Header showValues={showBalance} setShowValues={setShowBalance} />
+        <Summary showValues={showBalance} />
       </VStack>
       <ScrollView
         flex={1}
@@ -30,7 +30,6 @@ export function Home() {
         borderTopRadius='24'
         bg='white'
         showsVerticalScrollIndicator={false}
-        
       >
         <CreditCardsContainer showValues={showBalance} />
         <InvestmentContainer showValues={showBalance} />

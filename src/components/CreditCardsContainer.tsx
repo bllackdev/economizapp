@@ -17,7 +17,7 @@ export function CreditCardsContainer({ showValues }: Props) {
       mb={3}
     >
       <HStack justifyContent='space-between' alignItems='center'>
-        <Heading size='xs'>Cartões de crédito</Heading>
+        <Heading fontSize='xs'>Cartões de crédito</Heading>
         <Icon color='gray.900' as={<AntDesign name='creditcard' size={24} />} />
       </HStack>
 

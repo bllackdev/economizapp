@@ -1,4 +1,4 @@
-import { HStack, Heading, Icon, Image, Text, VStack } from "native-base";
+import { HStack, Heading, Icon, Text, VStack } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 type Props = {
@@ -24,7 +24,7 @@ export function NextPaymentCard({
         <Icon
           as={<MaterialCommunityIcons name='food' />}
           size='xl'
-          color='violet.500'
+          color='red.500'
         />
         <VStack>
           <Heading size='xs'>Mercado</Heading>

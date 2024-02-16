@@ -10,7 +10,7 @@ import {
   Image,
   useToast,
 } from "native-base";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import auth from "@react-native-firebase/auth";
 
@@ -20,7 +20,12 @@ import { AlertModal } from "./AlertModal";
 
 import HiIcon from "../assets/hi.gif";
 
-export function Header() {
+type Props = {
+  showValues: boolean;
+  setShowValues: (value: boolean) => void;
+};
+
+export function Header({ showValues, setShowValues }: Props) {
   const toast = useToast();
   const { displayName, photoURL } = useUserData();
 
@@ -58,19 +63,32 @@ export function Header() {
   return (
     <HStack bg='gray.900' justifyContent='space-between' alignItems='center'>
       <HStack flex={1} space={2} alignItems='center'>
-        <Avatar source={{ uri: photoURL }} bgColor='blueGray.600' size='xs'>
+        <Avatar source={{ uri: photoURL }} bgColor='blueGray.600' size='sm'>
           RR
         </Avatar>
         <VStack flex={1} ml='2' justifyContent='center'>
           <HStack space={2} alignItems='center'>
             <Image source={HiIcon} alt='gif de olá' w={3} h={3} />
-            <Text color='white' fontSize='xs'>Olá, </Text>
+            <Text color='white' fontSize='xs'>
+              Olá,{" "}
+            </Text>
           </HStack>
-          <Heading color='white' fontSize='xs'>
+          <Heading color='white' fontSize='xs' numberOfLines={1}>
             {displayName}
           </Heading>
         </VStack>
       </HStack>
+      <IconButton
+        icon={
+          <Icon
+            as={FontAwesome}
+            name={`${showValues ? "eye" : "eye-slash"}`}
+            color='white'
+            size={5}
+            onPress={() => setShowValues(!showValues)}
+          />
+        }
+      />
       <IconButton
         icon={
           <Icon

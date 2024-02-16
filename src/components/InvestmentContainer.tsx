@@ -17,7 +17,7 @@ export function InvestmentContainer({ showValues }: Props) {
       mb={3}
     >
       <HStack justifyContent='space-between' alignItems='center'>
-        <Heading size='xs'>Investimentos</Heading>
+        <Heading fontSize='xs'>Investimentos</Heading>
         <Icon color='gray.900' as={<AntDesign name='linechart' size={24} />} />
       </HStack>
 

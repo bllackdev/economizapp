@@ -1,4 +1,4 @@
-import { Divider, HStack, Heading, Icon, Text, VStack } from "native-base";
+import { Divider, HStack, Heading, Icon, VStack } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import { NextPaymentCard } from "./NextPaymentCard";
@@ -17,8 +17,11 @@ export function NextPayments({ showValues }: Props) {
       mb={8}
     >
       <HStack justifyContent='space-between' alignItems='center'>
-        <Heading size='xs'>Próximos pagamentos</Heading>
-        <Icon color='gray.900' as={<MaterialIcons name='payments' size={24} />} />
+        <Heading fontSize='xs'>Próximos pagamentos</Heading>
+        <Icon
+          color='gray.900'
+          as={<MaterialIcons name='payments' size={24} />}
+        />
       </HStack>
 
       <Divider color='gray.900' my={2} />

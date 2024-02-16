@@ -8,22 +8,21 @@ import {
 
 type Props = {
   showValues: boolean;
-  setShowValues: (value: boolean) => void;
 };
 
-export function Summary({ showValues, setShowValues }: Props) {
+export function Summary({ showValues }: Props) {
   const currentMonth = new Date().toLocaleString("pt-BR", { month: "long" });
 
   return (
-    <VStack mt={4} justifyContent='center' alignItems='center' w='xs'>
-      <HStack justifyContent='center' alignItems='center' w='xs' ml={12}>
+    <VStack mt={2} justifyContent='center' alignItems='center' w='xs'>
+      <HStack justifyContent='center' alignItems='center' w='xs' >
         <HStack justifyContent='center' alignItems='flex-end'>
-          <Text color='white' fontSize='md' textAlign='center' mr={1}>
+          <Text color='white' fontSize='xs' textAlign='center' mr={1}>
             resumo de
           </Text>
           <Text
             color='white'
-            fontSize='lg'
+            fontSize='sm'
             fontWeight='bold'
             textTransform='capitalize'
             mr={2}
@@ -31,17 +30,6 @@ export function Summary({ showValues, setShowValues }: Props) {
             {currentMonth}
           </Text>
         </HStack>
-        <IconButton
-          icon={
-            <Icon
-              as={FontAwesome}
-              name={`${showValues ? "eye" : "eye-slash"}`}
-              color='white'
-              size={5}
-              onPress={() => setShowValues(!showValues)}
-            />
-          }
-        />
       </HStack>
       <HStack p={2} justifyContent='center' alignItems='flex-start'>
         <VStack space={4} alignItems='center' justifyContent='center' mr={8}>
@@ -51,7 +39,7 @@ export function Summary({ showValues, setShowValues }: Props) {
                 color='white'
                 as={<MaterialCommunityIcons name='bank-outline' size={24} />}
               />
-              <Text color='white' textAlign='center'>
+              <Text color='white' textAlign='center' fontSize='xs'>
                 Saldo
               </Text>
             </HStack>
@@ -65,7 +53,7 @@ export function Summary({ showValues, setShowValues }: Props) {
                 color='violet.500'
                 as={<MaterialCommunityIcons name='party-popper' size={24} />}
               />
-              <Text color='violet.400' textAlign='center'>
+              <Text color='violet.400' textAlign='center' fontSize='xs'>
                 Desp. pagas
               </Text>
             </HStack>
@@ -81,7 +69,7 @@ export function Summary({ showValues, setShowValues }: Props) {
                 color='emerald.500'
                 as={<MaterialCommunityIcons name='cash-multiple' size={24} />}
               />
-              <Text color='emerald.500' textAlign='center'>
+              <Text color='emerald.500' textAlign='center' fontSize='xs'>
                 Receita
               </Text>
             </HStack>
@@ -95,7 +83,7 @@ export function Summary({ showValues, setShowValues }: Props) {
                 color='red.500'
                 as={<MaterialIcons name='money-off' size={24} />}
               />
-              <Text color='red.500' textAlign='center'>
+              <Text color='red.500' textAlign='center' fontSize='xs'>
                 Despesas
               </Text>
             </HStack>
