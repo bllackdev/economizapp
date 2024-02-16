@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Platform } from "react-native";
 import {
   HStack,
   Heading,
@@ -12,30 +11,29 @@ import {
   VStack,
 } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
-import DateTimePicker from "@react-native-community/datetimepicker";
 import { CATEGORIES } from "../utils/categories";
+import { DateType } from "react-native-ui-datepicker";
 
 import { Input } from "../components/Input";
 import { ButtonTransition } from "../components/ButtonTransition";
 import { Button } from "../components/Button";
 import { Select } from "../components/Select";
+import { Modal } from "../components/Modal";
+import { DatePicker } from "../components/DatePicker";
+import dayjs from "dayjs";
 
 export function Register() {
   const [transactionType, setTransactionType] = useState("down");
   const [category, setCategory] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [show, setShow] = useState(false);
+  const [date, setDate] = useState<DateType | undefined>();
+  const [isOpenDatePicker, setIsOpenDatePicker] = useState(false);
   const [isInstallment, setIsInstallment] = useState(false);
-  const onChange = (event, selectedDate) => {
-    const currentDate = selectedDate;
-    setShow(Platform.OS === "ios");
-    setDate(currentDate);
-  };
+  const [isPaid, setIsPaid] = useState(false);
 
   function handleTransactionTypeSelect(type: "up" | "down" | "invest") {
     setTransactionType(type);
   }
-
+ console.log('date', date)
   return (
     <VStack flex={1} bg='gray.900'>
       <VStack
@@ -44,11 +42,12 @@ export function Register() {
         py={4}
         justifyContent='center'
         alignItems='center'
+        borderRadius='3xl'
       >
-        <Text color='violet.700' fontSize='sm'>
+        <Text color='white' fontSize='sm'>
           Cadastre seus
         </Text>
-        <Heading color='violet.700' fontSize='lg'>
+        <Heading color='white' fontSize='lg'>
           Lançamentos
         </Heading>
       </VStack>
@@ -98,23 +97,6 @@ export function Register() {
           </VStack>
           <Input placeholder='Nome' />
           <Input placeholder='Preço' keyboardType='numeric' />
-          <HStack alignItems='center' space={4} px={2}>
-            <Text color='violet.700'>Parcelado</Text>
-            <Switch
-              size='sm'
-              mr={4}
-              onTrackColor='violet.500'
-              onThumbColor='violet.300'
-              offThumbColor='violet.300'
-              value={isInstallment}
-              onToggle={() => {
-                setIsInstallment(!isInstallment);
-              }}
-            />
-            {isInstallment && (
-              <Input placeholder='Parcelas' keyboardType='numeric' width='32' />
-            )}
-          </HStack>
 
           <Select
             items={CATEGORIES}
@@ -128,29 +110,72 @@ export function Register() {
               icon={
                 <Icon as={FontAwesome} name='calendar' color='violet.700' />
               }
-              borderRadius='full'
-              onPress={() => setShow((prev) => !prev)}
+              justifyContent='center'
+              alignItems='center'
+              w={16}
+              borderWidth={1}
+              borderRadius='lg'
+              borderColor="violet.700"
+              onPress={() => setIsOpenDatePicker((prev) => !prev)}
             />
             <Input
               placeholder='Data'
-              width='84%'
-              value={date.toLocaleDateString("pt-BR")}
+              width='56'
+              value={dayjs(date).format("DD/MM/YYYY")}
               isReadOnly
+              isDisabled
             />
           </HStack>
-          {show && (
-            <DateTimePicker
-              testID='dateTimePicker'
-              value={date}
-              mode='date'
-              display='spinner'
-              minimumDate={new Date(2020, 0, 1)}
-              onChange={onChange}
+
+          {transactionType === "down" && (
+            <>
+              <HStack alignItems='center' space={2} px={2}>
+                <Text color='violet.700'>Parcelado</Text>
+                <Switch
+                  size='sm'
+                  mr={4}
+                  onTrackColor='violet.500'
+                  onThumbColor='violet.300'
+                  offThumbColor='violet.300'
+                  value={isInstallment}
+                  onToggle={() => {
+                    setIsInstallment((prev) => !prev);
+                  }}
+                />
+                {isInstallment && (
+                  <Input
+                    placeholder='Parcelas'
+                    keyboardType='numeric'
+                    width='146px'
+                  />
+                )}
+              </HStack>
+              <HStack alignItems='center' space={2} px={2}>
+                <Text color='violet.700'>Pago</Text>
+                <Switch
+                  size='sm'
+                  mr={4}
+                  onTrackColor='violet.500'
+                  onThumbColor='violet.300'
+                  offThumbColor='violet.300'
+                  value={isPaid}
+                  onToggle={() => {
+                    setIsPaid((prev) => !prev);
+                  }}
+                />
+              </HStack>
+            </>
+          )}
+          {isOpenDatePicker && (
+            <Modal
+              showModal={isOpenDatePicker}
+              setShowModal={setIsOpenDatePicker}
+              children={<DatePicker date={date} setDate={setDate} />}
             />
           )}
         </VStack>
 
-        <Stack p={8}>
+        <Stack px={8} pb={8}>
           <Button
             label='Salvar'
             icon={<FontAwesome name='save' size={24} color='white' />}
