@@ -13,6 +13,7 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 import { CATEGORIES } from "../utils/categories";
 import { DateType } from "react-native-ui-datepicker";
+import dayjs from "dayjs";
 
 import { Input } from "../components/Input";
 import { ButtonTransition } from "../components/ButtonTransition";
@@ -20,7 +21,6 @@ import { Button } from "../components/Button";
 import { Select } from "../components/Select";
 import { Modal } from "../components/Modal";
 import { DatePicker } from "../components/DatePicker";
-import dayjs from "dayjs";
 
 export function Register() {
   const [transactionType, setTransactionType] = useState("down");
@@ -33,7 +33,7 @@ export function Register() {
   function handleTransactionTypeSelect(type: "up" | "down" | "invest") {
     setTransactionType(type);
   }
- console.log('date', date)
+
   return (
     <VStack flex={1} bg='gray.900'>
       <VStack
@@ -115,7 +115,7 @@ export function Register() {
               w={16}
               borderWidth={1}
               borderRadius='lg'
-              borderColor="violet.700"
+              borderColor='violet.700'
               onPress={() => setIsOpenDatePicker((prev) => !prev)}
             />
             <Input

@@ -10,9 +10,7 @@ export function Modal({ children, showModal, setShowModal }: Props) {
   return (
     <NBModal isOpen={showModal}>
       <NBModal.Content maxWidth='400px' bgColor='gray.900'>
-        <NBModal.Body bgColor='gray.900'>
-          {children}
-        </NBModal.Body>
+        <NBModal.Body bgColor='gray.900'>{children}</NBModal.Body>
         <Button
           bgColor='violet.500'
           mx={16}

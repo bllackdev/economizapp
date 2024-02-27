@@ -1,83 +1,55 @@
 import { HStack, Heading, Icon, Text, VStack } from "native-base";
-import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { CardProps } from "../domains/CardProps";
+import { CATEGORIES } from "../utils/categories";
 
-export function Card({
-  id,
-  label,
-  type,
-  value,
-  color,
-  percent,
-  date,
-}: CardProps) {
+export function Card({ id, label, type, value, category, date }: CardProps) {
+  function getColorIcon() {
+    if (type === "up") {
+      return "green.500";
+    } else if (type === "down") {
+      return "red.500";
+    } else {
+      return "violet.500";
+    }
+  }
+
+  function getIcon() {
+    if (category === CATEGORIES[0].label) {
+      return CATEGORIES[0].icon;
+    }
+    return "progress-pencil";
+  }
+
   return (
-    <VStack
+    <HStack
+      justifyContent='space-between'
+      alignItems='center'
+      px={2}
+      mb={2}
       w='full'
-      bg='white'
-      p='3'
-      mt='3'
-      borderRadius='xl'
-      shadow='1'
-      borderWidth={1}
-      borderColor='violet.700'
-      style={{
-        shadowRadius: 8,
-      }}
     >
-      <HStack justifyContent='space-between' alignItems='center'>
+      <HStack space={1} alignItems='center' justifyContent='center'>
+        <Icon
+          as={<MaterialCommunityIcons name={getIcon()} />}
+          size='xl'
+          color={getColorIcon()}
+        />
         <VStack>
-          <Heading color='violet.700' fontSize='sm' mb='1'>
-            {label}
-          </Heading>
-          <Text color={type === "up" ? "emerald.500" : "red.500"} fontSize='sm' fontWeight='semibold'>
-            R$ {value}
+          <Heading size='xs'>{label}</Heading>
+          <Text color='gray.500' fontSize='xs'>
+            {category}
           </Text>
-        </VStack>
-        <VStack justifyContent='space-between' alignItems='flex-end' >
-          <Text color='violet.700:alpha.60' fontSize='xs' mb='1'>
-            {date}
-          </Text>
-          {type === "up" ? (
-            <Icon
-              as={<FontAwesome name='dollar' />}
-              color='violet.700:alpha.60'
-              size={3}
-            />
-          ) : (
-            <Icon
-              as={<MaterialIcons name='money-off' />}
-              color='violet.700:alpha.60'
-              size={4}
-              mr={1}
-            />
-          )}
         </VStack>
       </HStack>
-      {/* <HStack justifyContent='space-between' mt='2'>
-        <HStack justifyContent='center' alignItems='center'>
-          {type === "up" ? (
-            <Icon
-              as={<FontAwesome name='dollar' />}
-              color='gray.700'
-              size={3}
-            />
-          ) : (
-            <Icon
-              as={<MaterialIcons name='money-off' />}
-              color='gray.700'
-              size={3}
-              mr={1}
-            />
-          )}
-          <Text color='gray.700' fontSize='xs'>
-            {type === "up" ? "Receita" : "Despesa"}
-          </Text>
-        </HStack>
-        <Text color='gray.700' fontSize='xs'>
+      <VStack justifyContent='space-between' alignItems='flex-end'>
+        <Text color='gray.500' fontSize='xs'>
           {date}
         </Text>
-      </HStack> */}
-    </VStack>
+        <Text color='gray.500' fontSize='xs' fontWeight='bold'>
+          R$ {value},00
+        </Text>
+      </VStack>
+    </HStack>
   );
 }

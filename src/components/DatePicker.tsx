@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useToken } from "native-base";
 import DateTimePicker, { DateType } from "react-native-ui-datepicker";
 import dayjs from "dayjs";

@@ -6,10 +6,10 @@ export function Empty() {
     <Center h='300'>
       <Icon
         as={<MaterialCommunityIcons name='delete-empty' />}
-        size={20}
+        size={12}
         color='violet.700'
       />
-      <Heading color='violet.700' fontSize='lg' textAlign='center'>
+      <Heading color='violet.700' fontSize='md' textAlign='center'>
         Não há lançamentos {"\n"} neste período.
       </Heading>
     </Center>

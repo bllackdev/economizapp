@@ -13,18 +13,18 @@ export type MonthsProps =
   | "Dezembro";
 
 export const MONTHS = [
-  { label: "Janeiro", value: "0" },
-  { label: "Fevereiro", value: "1" },
-  { label: "Março", value: "2" },
-  { label: "Abril", value: "3" },
-  { label: "Maio", value: "4" },
-  { label: "Junho", value: "5" },
-  { label: "Julho", value: "6" },
-  { label: "Agosto", value: "7" },
-  { label: "Setembro", value: "8" },
-  { label: "Outubro", value: "9" },
-  { label: "Novembro", value: "10" },
-  { label: "Dezembro", value: "11" },
+  { label: "Janeiro", value: "january" },
+  { label: "Fevereiro", value: "february" },
+  { label: "Março", value: "march" },
+  { label: "Abril", value: "april" },
+  { label: "Maio", value: "may" },
+  { label: "Junho", value: "june" },
+  { label: "Julho", value: "july" },
+  { label: "Agosto", value: "august" },
+  { label: "Setembro", value: "september" },
+  { label: "Outubro", value: "october" },
+  { label: "Novembro", value: "november" },
+  { label: "Dezembro", value: "december" },
 ];
 
 export const MONTHS_TOTALIZER = [
@@ -41,3 +41,18 @@ export const MONTHS_TOTALIZER = [
   { month: "Novembro", income: 5200, expense: 4800 },
   { month: "Dezembro", income: 5200, expense: 4800 },
 ];
+
+export enum MONTHS_ENUM {
+  JANUARY = "Janeiro",
+  FEBRUARY = "Fevereiro",
+  MARCH = "Março",
+  APRIL = "Abril",
+  MAY = "Maio",
+  JUNE = "Junho",
+  JULY = "Julho",
+  AUGUST = "Agosto",
+  SEPTEMBER = "Setembro",
+  OCTOBER = "Outubro",
+  NOVEMBER = "Novembro",
+  DECEMBER = "Dezembro",
+}
