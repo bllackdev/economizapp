@@ -1,4 +1,5 @@
-import { Button, HStack, Icon, Text } from "native-base";
+import { Pressable } from "react-native";
+import { HStack, Icon, Text, useToken } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 type Props = {
@@ -9,20 +10,22 @@ type Props = {
 };
 
 export function CategoryCard({ label, icon, isActive, onPress }: Props) {
+  const gray700 = useToken("colors", "gray.700");
+  const green400 = useToken("colors", "green.400");
+
   return (
-    <Button
-      variant='outline'
-      isPressed={isActive}
+    <Pressable
       onPress={onPress}
-      borderRadius='3xl'
-      borderColor='gray.700'
-      justifyContent='center'
-      alignItems='center'
-      mr={2}
-      px={4}
-      py={1}
-      _pressed={{
-        bgColor: isActive ? "green.400" : "transparent",
+      style={{
+        borderRadius: 50,
+        borderColor: gray700,
+        justifyContent: "center",
+        alignItems: "center",
+        marginRight: 8,
+        paddingHorizontal: 12,
+        paddingVertical: 6,
+        backgroundColor: isActive ? green400 : "transparent",
+        borderWidth: isActive ? 0 : 1,
       }}
     >
       <HStack space={1} justifyContent='center' alignContent='center'>
@@ -35,6 +38,6 @@ export function CategoryCard({ label, icon, isActive, onPress }: Props) {
           {label}
         </Text>
       </HStack>
-    </Button>
+    </Pressable>
   );
 }

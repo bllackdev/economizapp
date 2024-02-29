@@ -6,11 +6,15 @@ import {
 import { Icon, useToken } from "native-base";
 import { FontAwesome, Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 
+import { useUserData } from "../hooks/useUserData";
+
 import { Home } from "../screens/Home";
 import { Register } from "../screens/Register";
 import { Extract } from "../screens/Extract";
 import { Resume } from "../screens/Resume";
 import { CreditCards } from "../screens/CreditCards";
+import { Avatar } from "../components/Avatar";
+import { Profile } from "../screens/Profile";
 
 type AppUserRoutesParamList = {
   home: undefined;
@@ -18,6 +22,7 @@ type AppUserRoutesParamList = {
   register: undefined;
   extract: undefined;
   resume: undefined;
+  profile: undefined;
 };
 
 export type AppUserRoutesParamListProps =
@@ -26,10 +31,11 @@ export type AppUserRoutesParamListProps =
 export function AppUserRoutes() {
   const { Navigator, Screen } =
     createBottomTabNavigator<AppUserRoutesParamList>();
+  const { photoURL } = useUserData();
 
   const violetColor = useToken("colors", "violet.500");
   const emeraldColor = useToken("colors", "emerald.500");
-  
+
   return (
     <Navigator
       screenOptions={{
@@ -104,7 +110,7 @@ export function AppUserRoutes() {
           ),
         }}
       />
-      <Screen
+      {/* <Screen
         name='resume'
         component={Resume}
         options={{
@@ -117,14 +123,19 @@ export function AppUserRoutes() {
             />
           ),
         }}
-      />
-      {/* <Screen
-        name='category'
-        component={Category}
-        options={{
-          tabBarButton: () => null,
-        }}
       /> */}
+      <Screen
+        name='profile'
+        component={Profile}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Avatar
+              selected={color === emeraldColor}
+              source={{ uri: photoURL }}
+            />
+          ),
+        }}
+      />
     </Navigator>
   );
 }

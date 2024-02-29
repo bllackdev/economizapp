@@ -27,7 +27,7 @@ type Props = {
 
 export function Header({ showValues, setShowValues }: Props) {
   const toast = useToast();
-  const { displayName, photoURL } = useUserData();
+  const { displayName } = useUserData();
 
   const [isOpen, setIsOpen] = useState(false);
   const [isLogging, setIsLogging] = useState(false);
@@ -63,19 +63,16 @@ export function Header({ showValues, setShowValues }: Props) {
   return (
     <HStack bg='gray.900' justifyContent='space-between' alignItems='center'>
       <HStack flex={1} space={2} alignItems='center'>
-        <Avatar source={{ uri: photoURL }} bgColor='blueGray.600' size='sm'>
-          RR
-        </Avatar>
         <VStack flex={1} ml='2' justifyContent='center'>
-          <HStack space={2} alignItems='center'>
+          <HStack space={1} alignItems='center'>
             <Image source={HiIcon} alt='gif de olá' w={3} h={3} />
             <Text color='white' fontSize='xs'>
-              Olá,{" "}
+              Olá,
             </Text>
+            <Heading color='white' fontSize='xs' numberOfLines={1}>
+              {displayName}
+            </Heading>
           </HStack>
-          <Heading color='white' fontSize='xs' numberOfLines={1}>
-            {displayName}
-          </Heading>
         </VStack>
       </HStack>
       <IconButton

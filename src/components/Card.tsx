@@ -10,7 +10,7 @@ export function Card({ id, label, type, value, category, date }: CardProps) {
     } else if (type === "down") {
       return "red.500";
     } else {
-      return "violet.500";
+      return "violet.500"; 
     }
   }
 
@@ -31,7 +31,11 @@ export function Card({ id, label, type, value, category, date }: CardProps) {
     >
       <HStack space={1} alignItems='center' justifyContent='center'>
         <Icon
-          as={<MaterialCommunityIcons name={getIcon()} />}
+          as={
+            <MaterialCommunityIcons
+              name={getIcon() as keyof typeof MaterialCommunityIcons.glyphMap}
+            />
+          }
           size='xl'
           color={getColorIcon()}
         />
