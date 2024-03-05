@@ -45,7 +45,7 @@ export function Header({ showValues, setShowValues }: Props) {
         toast.show({
           title: "Desconectado com sucesso ",
           placement: "top",
-          bgColor: "emerald.500",
+          bgColor: "green.500",
           duration: 5000,
         });
       })
@@ -61,15 +61,15 @@ export function Header({ showValues, setShowValues }: Props) {
   }
 
   return (
-    <HStack bg='gray.900' justifyContent='space-between' alignItems='center'>
-      <HStack flex={1} space={2} alignItems='center'>
-        <VStack flex={1} ml='2' justifyContent='center'>
-          <HStack space={1} alignItems='center'>
-            <Image source={HiIcon} alt='gif de olá' w={3} h={3} />
-            <Text color='white' fontSize='xs'>
+    <HStack bg="gray.800" justifyContent="space-between" alignItems="center">
+      <HStack flex={1} space={2} alignItems="center">
+        <VStack flex={1} ml="2" justifyContent="center">
+          <HStack space={1} alignItems="center">
+            <Image source={HiIcon} alt="gif de olá" w={3} h={3} />
+            <Text color="white" fontSize="xs">
               Olá,
             </Text>
-            <Heading color='white' fontSize='xs' numberOfLines={1}>
+            <Heading color="white" fontSize="xs" numberOfLines={1}>
               {displayName}
             </Heading>
           </HStack>
@@ -80,26 +80,27 @@ export function Header({ showValues, setShowValues }: Props) {
           <Icon
             as={FontAwesome}
             name={`${showValues ? "eye" : "eye-slash"}`}
-            color='white'
+            color="white"
             size={5}
-            onPress={() => setShowValues(!showValues)}
           />
         }
+        borderRadius="full"
+        onPress={() => setShowValues(!showValues)}
       />
       <IconButton
         icon={
           <Icon
             as={FontAwesome5}
-            name='power-off'
-            color='emerald.500'
+            name="power-off"
+            color="green.500"
             size={4}
-            onPress={() => setIsOpen(!isOpen)}
           />
         }
-        borderRadius='full'
+        onPress={() => setIsOpen(!isOpen)}
+        borderRadius="full"
       />
       <AlertModal
-        text='Tem certeza que deseja desconectar da sua conta?'
+        text="Tem certeza que deseja desconectar da sua conta?"
         isOpen={isOpen}
         onPressPrimary={handleSignOut}
         onPressSecondary={onClose}

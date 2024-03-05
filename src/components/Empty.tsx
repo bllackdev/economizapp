@@ -7,9 +7,9 @@ export function Empty() {
       <Icon
         as={<MaterialCommunityIcons name='delete-empty' />}
         size={12}
-        color='violet.700'
+        color='purple.500'
       />
-      <Heading color='violet.700' fontSize='md' textAlign='center'>
+      <Heading color='purple.500' fontSize='md' textAlign='center'>
         Não há lançamentos {"\n"} neste período.
       </Heading>
     </Center>

@@ -25,7 +25,7 @@ export function Listing() {
   return (
     <VStack flex={1}>
       <HStack w='full' justifyContent='space-between' alignItems='center'>
-        <Heading color='gray.900' fontSize='md'>
+        <Heading color='gray.800' fontSize='md'>
           Últimos lançamentos
         </Heading>
 
@@ -38,7 +38,7 @@ export function Listing() {
             <Icon as={AntDesign} name='arrowright' size={4} color='gray.400' />
           }
           _pressed={{
-            color: "emerald.500",
+            color: "green.500",
           }}
           _text={{
             fontSize: "xs",

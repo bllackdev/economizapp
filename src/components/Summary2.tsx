@@ -15,7 +15,7 @@ export function Summary2() {
 
   return (
     <Center
-      bgColor='violet.800'
+      bgColor='purple.500'
       borderRadius='xl'
       py={4}
       px={2}
@@ -50,8 +50,8 @@ export function Summary2() {
 
       <HStack w='full' justifyContent='space-around' alignItems='center' mt='2'>
         <VStack justifyContent='center' alignItems='center'>
-          <Text color='emerald.400'>Receita</Text>
-          <Text color='emerald.400' fontWeight='bold'>
+          <Text color='green.500'>Receita</Text>
+          <Text color='green.500' fontWeight='bold'>
             R$ {showBalance ? "2.500,00" : "--"}
           </Text>
         </VStack>

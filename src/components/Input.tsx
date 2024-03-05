@@ -40,12 +40,12 @@ export function Input({
       value={value}
       isReadOnly={isReadOnly}
       isDisabled={isDisabled}
-      placeholderTextColor='violet.200'
-      borderColor='violet.500'
+      placeholderTextColor='purple.500'
+      borderColor='purple.500'
       isInvalid={isInvalid}
       borderRadius='lg'
       keyboardType={keyboardType}
-      color={"violet.700"}
+      color={"purple.500"}
       fontSize='sm'
       _invalid={{
         borderWidth: 1,

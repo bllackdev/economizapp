@@ -35,7 +35,7 @@ export function Register() {
   }
 
   return (
-    <VStack flex={1} bg='gray.900'>
+    <VStack flex={1} bg='gray.800'>
       <VStack
         w='full'
         px={8}
@@ -86,10 +86,10 @@ export function Register() {
                 <Icon
                   as={FontAwesome}
                   name='info-circle'
-                  color='violet.700'
+                  color='purple.500'
                   size={3}
                 />
-                <Text color='violet.700' fontSize='2xs'>
+                <Text color='purple.500' fontSize='2xs'>
                   Investimento não é despesa e nem receita
                 </Text>
               </HStack>
@@ -103,19 +103,19 @@ export function Register() {
             placeholder='Categoria'
             selectedValue={category}
             onValueChange={setCategory}
-            textColor='violet.700'
+            textColor='purple.500'
           />
           <HStack w='full' space={2}>
             <IconButton
               icon={
-                <Icon as={FontAwesome} name='calendar' color='violet.700' />
+                <Icon as={FontAwesome} name='calendar' color='purple.500' />
               }
               justifyContent='center'
               alignItems='center'
               w={16}
               borderWidth={1}
               borderRadius='lg'
-              borderColor='violet.700'
+              borderColor='purple.500'
               onPress={() => setIsOpenDatePicker((prev) => !prev)}
             />
             <Input
@@ -130,13 +130,13 @@ export function Register() {
           {transactionType === "down" && (
             <>
               <HStack alignItems='center' space={2} px={2}>
-                <Text color='violet.700'>Parcelado</Text>
+                <Text color='purple.500'>Parcelado</Text>
                 <Switch
                   size='sm'
                   mr={4}
-                  onTrackColor='violet.500'
-                  onThumbColor='violet.300'
-                  offThumbColor='violet.300'
+                  onTrackColor='purple.500'
+                  onThumbColor='purple.500'
+                  offThumbColor='purple.500'
                   value={isInstallment}
                   onToggle={() => {
                     setIsInstallment((prev) => !prev);
@@ -151,13 +151,13 @@ export function Register() {
                 )}
               </HStack>
               <HStack alignItems='center' space={2} px={2}>
-                <Text color='violet.700'>Pago</Text>
+                <Text color='purple.500'>Pago</Text>
                 <Switch
                   size='sm'
                   mr={4}
-                  onTrackColor='violet.500'
-                  onThumbColor='violet.300'
-                  offThumbColor='violet.300'
+                  onTrackColor='purple.500'
+                  onThumbColor='purple.500'
+                  offThumbColor='purple.500'
                   value={isPaid}
                   onToggle={() => {
                     setIsPaid((prev) => !prev);
@@ -179,8 +179,8 @@ export function Register() {
           <Button
             label='Salvar'
             icon={<FontAwesome name='save' size={24} color='white' />}
-            bgColor='violet.700'
-            pressedBgColor='violet.800'
+            bgColor='purple.500'
+            pressedBgColor='purple.500'
           />
         </Stack>
       </ScrollView>

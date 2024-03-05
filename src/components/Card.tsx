@@ -10,7 +10,7 @@ export function Card({ id, label, type, value, category, date }: CardProps) {
     } else if (type === "down") {
       return "red.500";
     } else {
-      return "violet.500"; 
+      return "purple.500"; 
     }
   }
 

@@ -11,7 +11,7 @@ type Props = {
 
 export function CategoryCard({ label, icon, isActive, onPress }: Props) {
   const gray700 = useToken("colors", "gray.700");
-  const green400 = useToken("colors", "green.400");
+  const green400 = useToken("colors", "green.500");
 
   return (
     <Pressable

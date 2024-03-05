@@ -8,7 +8,7 @@ export function Profile() {
   const { displayName, photoURL } = useUserData();
 
   return (
-    <VStack flex={1} bg='gray.900'>
+    <VStack flex={1} bg='gray.800'>
       <VStack
         w='full'
         px={8}
@@ -26,7 +26,7 @@ export function Profile() {
             RR
           </Avatar>
 
-          <Heading color='gray.900' fontSize='xs' numberOfLines={1}>
+          <Heading color='gray.800' fontSize='xs' numberOfLines={1}>
             {displayName}
           </Heading>
         </VStack>

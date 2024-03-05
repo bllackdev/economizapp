@@ -6,7 +6,7 @@ type Props = ImageProps & {
 };
 
 export function Avatar({ selected, ...rest }: Props) {
-  const emerald500 = useToken("colors", "emerald.500");
+  const green500 = useToken("colors", "green.500");
   
   return (
     <Image
@@ -15,7 +15,7 @@ export function Avatar({ selected, ...rest }: Props) {
         height: 30,
         borderRadius: 25,
         borderWidth: selected ? 3 : 0,
-        borderColor: selected && emerald500,
+        borderColor: selected && green500,
       }}
       {...rest}
     />

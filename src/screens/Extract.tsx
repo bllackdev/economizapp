@@ -54,7 +54,7 @@ export function Extract() {
   }
 
   return (
-    <VStack flex={1} bg='gray.900'>
+    <VStack flex={1} bg='gray.800'>
       <VStack
         w='full'
         px={8}
@@ -75,7 +75,7 @@ export function Extract() {
         alignItems='center'
         px={8}
         py={4}
-        bg='gray.900'
+        bg='gray.800'
       >
         <FlatList
           data={MONTHS}

@@ -12,19 +12,19 @@ export function NextPayments({ showValues }: Props) {
     <VStack
       borderRadius='lg'
       borderWidth={1}
-      borderColor='gray.900:alpha.40'
+      borderColor='gray.800:alpha.40'
       p={2}
       mb={8}
     >
       <HStack justifyContent='space-between' alignItems='center'>
         <Heading fontSize='xs'>Próximos pagamentos</Heading>
         <Icon
-          color='gray.900'
+          color='gray.800'
           as={<MaterialIcons name='payments' size={24} />}
         />
       </HStack>
 
-      <Divider color='gray.900' my={2} />
+      <Divider color='gray.800' my={2} />
 
       <VStack space={2} mt={1}>
         <NextPaymentCard showValues={showValues} />

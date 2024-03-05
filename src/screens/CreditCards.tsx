@@ -2,7 +2,7 @@ import { Text, VStack } from "native-base";
 
 export function CreditCards() {
   return (
-    <VStack flex={1} bg='gray.900'>
+    <VStack flex={1} bg='gray.800'>
       <VStack
         w='full'
         px={8}

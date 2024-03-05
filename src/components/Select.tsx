@@ -41,17 +41,17 @@ export function Select({
     <NBSelect
       accessibilityLabel='Selecione a categoria'
       placeholder={placeholder}
-      placeholderTextColor='violet.200'
+      placeholderTextColor='purple.500'
       selectedValue={selectedValue}
       onValueChange={(itemValue: any) => onValueChange(itemValue)}
       borderRadius='lg'
-      borderColor='violet.500'
+      borderColor='purple.500'
       w='full'
       mb={2}
       color={textColor}
       fontSize='sm'
       _selectedItem={{
-        bg: "violet.700:alpha.30",
+        bg: "purple.500:alpha.30",
         endIcon: <CheckIcon size='5' />,
         borderRadius: "xl",
       }}
@@ -74,7 +74,7 @@ export function Select({
           leftIcon={<Icon as={MaterialCommunityIcons} name={item.icon} />}
           borderRadius='lg'
           borderWidth={1}
-          borderColor='violet.500'
+          borderColor='purple.500'
           mb={2}
         />
       ))}

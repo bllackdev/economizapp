@@ -13,8 +13,8 @@ export function DatePicker({ date, setDate }: Props) {
   dayjs.extend(isLeapYear);
 
   const white = useToken("colors", "white");
-  const violet500 = useToken("colors", "violet.500");
-  const gray900 = useToken("colors", "gray.900");
+  const purple500 = useToken("colors", "purple.500");
+  const gray900 = useToken("colors", "gray.800");
 
   return (
     <DateTimePicker
@@ -39,7 +39,7 @@ export function DatePicker({ date, setDate }: Props) {
       yearContainerStyle={{
         backgroundColor: gray900,
       }}
-      selectedItemColor={violet500}
+      selectedItemColor={purple500}
       date={date}
       onChange={(params) => setDate(params.date)}
     />

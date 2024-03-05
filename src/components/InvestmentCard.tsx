@@ -11,7 +11,7 @@ export function InvestmentCard({ showValues }: Props) {
       <HStack justifyContent='space-between' alignItems='center'>
         <HStack space={1} alignItems='center' justifyContent='center'>
           <Icon
-            color='emerald.500'
+            color='green.500'
             size='md'
             as={<Entypo name='bar-graph' />}
           />

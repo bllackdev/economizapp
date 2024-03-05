@@ -34,9 +34,9 @@ export function Resume() {
   const [data, setData] = useState<CardProps[]>([]);
 
   const colors = {
-    emerald: "#10b981",
-    red: "#ef4444",
-    violet: "#6d28d9",
+    green: "#00875F",
+    red: "#AA2834",
+    purple: "#6d28d9",
   };
 
   function handleCardOnPress(id: string) {
@@ -48,9 +48,9 @@ export function Resume() {
   }, [month]);
 
   return (
-    <VStack flex={1} bg='gray.900'>
+    <VStack flex={1} bg='gray.800'>
       <VStack w='full' p={8} pb={5} justifyContent='center' alignItems='center'>
-        <Heading color='violet.700' fontSize='xl' mb={6}>
+        <Heading color='purple.500' fontSize='xl' mb={6}>
           Resumo
         </Heading>
         <Input
@@ -60,8 +60,8 @@ export function Resume() {
           InputRightElement={
             <Button 
             pl={8}
-            bgColor="violet.500"
-            pressedBgColor="violet.700"
+            bgColor="purple.500"
+            pressedBgColor="purple.500"
             borderLeftRadius="none"
             borderRightRadius="md"
             icon={<Icon as={<FontAwesome name='search' />} />} />
@@ -73,7 +73,7 @@ export function Resume() {
           <VictoryChart>
             <VictoryGroup
               offset={5}
-              colorScale={[colors.emerald, colors.red]}
+              colorScale={[colors.green, colors.red]}
               animate={{
                 duration: 2000,
                 onLoad: { duration: 1000 },

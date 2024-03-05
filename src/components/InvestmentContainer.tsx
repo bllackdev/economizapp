@@ -12,16 +12,16 @@ export function InvestmentContainer({ showValues }: Props) {
     <VStack
       borderRadius='lg'
       borderWidth={1}
-      borderColor='gray.900:alpha.40'
+      borderColor='gray.800:alpha.40'
       p={2}
       mb={3}
     >
       <HStack justifyContent='space-between' alignItems='center'>
         <Heading fontSize='xs'>Investimentos</Heading>
-        <Icon color='gray.900' as={<AntDesign name='linechart' size={24} />} />
+        <Icon color='gray.800' as={<AntDesign name='linechart' size={24} />} />
       </HStack>
 
-      <Divider color='gray.900' my={2} />
+      <Divider color='gray.800' my={2} />
 
       <VStack space={2} mt={1}>
         {/* FlatList */}

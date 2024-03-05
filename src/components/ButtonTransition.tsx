@@ -16,23 +16,23 @@ export function ButtonTransition({ label, type, isActive, onPress }: Props) {
       isPressed={isActive}
       onPress={onPress}
       borderRadius='lg'
-      borderColor={type === "up" ? "emerald.500" : (type === "down" ? "red.500" : "violet.500")}
+      borderColor={type === "up" ? "green.500" : (type === "down" ? "red.500" : "purple.500")}
       bgColor={
-        isActive ? (type === "up" ? "emerald.500:alpha.20" : (type === "down" ? "red.500:alpha.20" : "violet.500:alpha.20")) : "transparent"
+        isActive ? (type === "up" ? "green.500:alpha.20" : (type === "down" ? "red.500:alpha.20" : "purple.500:alpha.20")) : "transparent"
       }
       _hover={{
-        bgColor: type === "up" ? "emerald.500" : (type === "down" ? "red.500" : "violet.500"),
+        bgColor: type === "up" ? "green.500" : (type === "down" ? "red.500" : "purple.500"),
       }}
       _text={{
         fontSize: "2xs",
-        color: type === "up" ? "emerald.500" : (type === "down" ? "red.500" : "violet.500"),
+        color: type === "up" ? "green.500" : (type === "down" ? "red.500" : "purple.500"),
       }}
       leftIcon={
         <Icon
           as={Feather}
           name={type === "up" ? "arrow-up-circle" : (type === "down" ? "arrow-down-circle" : "trending-up")}
           size={4}
-          color={type === "up" ? "emerald.500" : (type === "down" ? "red.500" : "violet.500")}
+          color={type === "up" ? "green.500" : (type === "down" ? "red.500" : "purple.500")}
         />
       }
     >{label}</Button>

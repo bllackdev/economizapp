@@ -42,7 +42,7 @@ export function AlertModal({
               Cancelar
             </Button>
             <Button
-              bgColor='violet.700'
+              bgColor='purple.500'
               onPress={onPressPrimary}
               w={20}
               _text={{ color: "white", fontSize: "xs", fontFamily: "body" }}

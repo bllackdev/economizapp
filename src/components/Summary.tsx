@@ -50,14 +50,14 @@ export function Summary({ showValues }: Props) {
           <VStack>
             <HStack space={2} justifyContent='center' alignItems='center'>
               <Icon
-                color='violet.500'
+                color='purple.500'
                 as={<MaterialCommunityIcons name='party-popper' size={24} />}
               />
-              <Text color='violet.400' textAlign='center' fontSize='xs'>
+              <Text color='purple.500' textAlign='center' fontSize='xs'>
                 Desp. pagas
               </Text>
             </HStack>
-            <Text color='violet.400' fontWeight='bold' textAlign='center'>
+            <Text color='purple.500' fontWeight='bold' textAlign='center'>
               R$ {showValues ? "2.500,00" : "--"}
             </Text>
           </VStack>
@@ -66,14 +66,14 @@ export function Summary({ showValues }: Props) {
           <VStack alignItems='center' justifyContent='center'>
             <HStack space={2} justifyContent='center' alignItems='center'>
               <Icon
-                color='emerald.500'
+                color='green.500'
                 as={<MaterialCommunityIcons name='cash-multiple' size={24} />}
               />
-              <Text color='emerald.500' textAlign='center' fontSize='xs'>
+              <Text color='green.500' textAlign='center' fontSize='xs'>
                 Receita
               </Text>
             </HStack>
-            <Text color='emerald.400' fontWeight='bold'>
+            <Text color='green.500' fontWeight='bold'>
               R$ {showValues ? "2.500,00" : "--"}
             </Text>
           </VStack>

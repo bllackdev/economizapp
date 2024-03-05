@@ -108,7 +108,7 @@ export function SignIn() {
       flex={1}
       alignItems='center'
       justifyContent='space-around'
-      bg='gray.900'
+      bg='gray.800'
       p={12}
     >
       <Image source={AppIcon} alt='Logo do App' mb='12' w='48' h='32' />
@@ -127,8 +127,8 @@ export function SignIn() {
             <Button
               label='Entrar com Google'
               icon={<FontAwesome name='google' size={24} color='white' />}
-              bgColor='violet.700'
-              pressedBgColor='violet.800'
+              bgColor='purple.500'
+              pressedBgColor='purple.500'
               onPress={() => handleSignIn()}
               isLoading={isLogging}
             />
@@ -136,8 +136,8 @@ export function SignIn() {
               <Button
                 label='Entrar com Apple'
                 icon={<FontAwesome name='apple' size={24} color='white' />}
-                bgColor='violet.700'
-                pressedBgColor='violet.800'
+                bgColor='purple.500'
+                pressedBgColor='purple.500'
               />
             ) : null}
           </VStack>

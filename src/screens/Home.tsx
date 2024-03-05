@@ -11,7 +11,7 @@ export function Home() {
   const [showBalance, setShowBalance] = useState(true);
 
   return (
-    <VStack flex={1} bg='gray.900'>
+    <VStack flex={1} bg='gray.800'>
       <VStack
         w='full'
         px={6}
