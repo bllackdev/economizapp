@@ -15,7 +15,7 @@ export function Home() {
       <VStack
         w='full'
         px={6}
-        py={5}
+        py={2}
         justifyContent='center'
         alignItems='center'
       >

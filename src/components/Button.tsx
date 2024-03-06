@@ -31,7 +31,7 @@ export function Button({
       _pressed={{
         bgColor: `${pressedBgColor}`,
       }}
-      borderRadius='lg'
+      borderRadius='2xl'
       {...rest}
     >
       {label}
