@@ -1,16 +1,5 @@
 import { forwardRef } from "react";
-import {
-  Box,
-  Center,
-  HStack,
-  Heading,
-  Icon,
-  IconButton,
-  Stack,
-  Text,
-  VStack,
-  useToken,
-} from "native-base";
+import { HStack, Heading, Icon, VStack, useToken } from "native-base";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { AntDesign } from "@expo/vector-icons";
 import { MenuButton } from "./MenuButton";
@@ -42,7 +31,7 @@ export const Menu = forwardRef<BottomSheet, Props>(({ onClose }, ref) => {
           onPress={() => onClose()}
         />
         <Heading flex={1} fontSize="md" color="white" textAlign="center">
-          Selecione uma opção
+          Selecione para adicionar
         </Heading>
       </HStack>
       <VStack flex={1} space={5} alignItems="center">

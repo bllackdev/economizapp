@@ -1,5 +1,5 @@
 import { Pressable } from "react-native";
-import { Text, VStack, useToken } from "native-base";
+import { IconButton, Text, VStack } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 type Props = {
@@ -9,8 +9,6 @@ type Props = {
 };
 
 export function MenuButton({ title, icon, color }: Props) {
-  const gray700 = useToken("colors", "gray.700");
-  const green400 = useToken("colors", "green.500");
 
   return (
     <Pressable
@@ -20,17 +18,16 @@ export function MenuButton({ title, icon, color }: Props) {
       }}
     >
       <VStack space={2} justifyContent="center" alignItems="center">
-        <MaterialCommunityIcons
-          name={icon}
-          size={36}
-          color={color}
-          style={{
-            padding: 20,
-            borderRadius: 12,
-            backgroundColor: gray700,
+        <IconButton
+          icon={<MaterialCommunityIcons name={icon} size={36} color={color} />}
+          padding={5}
+          borderRadius={12}
+          backgroundColor="gray.700"
+          _pressed={{
+            backgroundColor: "purple.500:alpha.40",
           }}
         />
-        <Text color="white" fontSize="xs">
+        <Text color="white" fontSize="xs" textAlign='center'>
           {title}
         </Text>
       </VStack>

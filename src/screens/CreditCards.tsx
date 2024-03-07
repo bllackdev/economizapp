@@ -1,26 +1,48 @@
-import { Text, VStack } from "native-base";
+import { useRef } from "react";
+import { Heading, ScrollView, Text, VStack } from "native-base";
+import BottomSheet, { BottomSheetModal } from "@gorhom/bottom-sheet";
+
+import { CreditCardProgress } from "../components/CreditCardProgress";
+import { MenuCreditCards } from "../components/MenuCreditCards";
 
 export function CreditCards() {
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  const handleMenuBottomSheetOpen = () => bottomSheetRef.current?.expand();
+  const handleMenuBottomSheetClose = () =>
+    bottomSheetRef.current?.snapToIndex(0);
+
   return (
-    <VStack flex={1} bg='gray.800'>
+    <VStack flex={1} bg="gray.800">
       <VStack
-        w='full'
+        w="full"
         px={8}
-        py={5}
-        justifyContent='center'
-        alignItems='center'
+        py={4}
+        justifyContent="center"
+        alignItems="center"
+        borderRadius="3xl"
       >
-        <Text color='white' fontWeight='bold' fontSize='2xl'>
-          Cartão de Crédito
+        <Text color="white" fontSize="sm">
+          Consulte e faça ajustes em seus
         </Text>
+        <Heading color="white" fontSize="lg">
+          Cartões
+        </Heading>
       </VStack>
-      <VStack flex={1} px={8} bg='white' borderTopRadius='3xl'>
-        <VStack flex={1} justifyContent='center' alignItems='center'>
-          <Text color='gray.500' fontSize='xl'>
-            Em breve...
-          </Text>
-        </VStack>
+      <VStack flex={1} p={6} bg="white" borderTopRadius="3xl">
+        <ScrollView flex={1} showsVerticalScrollIndicator={false}>
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CreditCardProgress
+              key={index}
+              onOpen={() => handleMenuBottomSheetOpen()}
+            />
+          ))}
+        </ScrollView>
       </VStack>
+      <MenuCreditCards
+        ref={bottomSheetRef}
+        onClose={handleMenuBottomSheetClose}
+      />
     </VStack>
   );
 }
