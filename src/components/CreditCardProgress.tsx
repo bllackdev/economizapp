@@ -1,10 +1,7 @@
-import { useRef } from "react";
+import { Pressable } from "react-native";
 import { HStack, Heading, Image, Text, VStack } from "native-base";
-import BottomSheet from "@gorhom/bottom-sheet";
 
 import { Progress } from "./Progress";
-import { Pressable } from "react-native";
-import { MenuCreditCards } from "./MenuCreditCards";
 
 type Props = {
   bankName?: string;
@@ -27,7 +24,7 @@ export function CreditCardProgress({
         onOpen();
       }}
       style={{
-        marginBottom: 18
+        marginBottom: 18,
       }}
     >
       <VStack p={4} borderRadius="xl" bgColor="gray.100">

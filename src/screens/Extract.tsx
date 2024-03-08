@@ -1,20 +1,16 @@
 import { useState } from "react";
 import {
-  Center,
   Divider,
   FlatList,
   HStack,
   Heading,
   ScrollView,
-  Stack,
   Text,
   VStack,
 } from "native-base";
-import { CardProps } from "../domains/CardProps";
 
 import { getLabelMonth } from "../functions/getLabelMonth";
 
-import { Select } from "../components/Select";
 import { Card } from "../components/Card";
 import { Empty } from "../components/Empty";
 
@@ -23,7 +19,6 @@ import { YEARS } from "../utils/years";
 import { EXPENSES } from "../utils/expenses";
 import { MonthCard } from "../components/MonthCard";
 import { CATEGORIES, CATEGORIES_ENUM } from "../utils/categories";
-import { Category } from "../components/Category";
 import { CategoryCard } from "../components/CategoryCard";
 
 type MonthProps = {
@@ -54,28 +49,28 @@ export function Extract() {
   }
 
   return (
-    <VStack flex={1} bg='gray.800'>
+    <VStack flex={1} bg="gray.800">
       <VStack
-        w='full'
+        w="full"
         px={8}
         py={4}
-        justifyContent='center'
-        alignItems='center'
-        borderRadius='3xl'
+        justifyContent="center"
+        alignItems="center"
+        borderRadius="3xl"
       >
-        <Text color='white' fontSize='sm'>
+        <Text color="white" fontSize="sm">
           Consulte os extratos dos seus
         </Text>
-        <Heading color='white' fontSize='lg'>
+        <Heading color="white" fontSize="lg">
           Lançamentos
         </Heading>
       </VStack>
       <HStack
-        justifyContent='center'
-        alignItems='center'
+        justifyContent="center"
+        alignItems="center"
         px={8}
         py={4}
-        bg='gray.800'
+        bg="gray.800"
       >
         <FlatList
           data={MONTHS}
@@ -92,8 +87,8 @@ export function Extract() {
         />
       </HStack>
 
-      <VStack flex={1} bg='white' borderTopRadius='3xl'>
-        <HStack justifyContent='center' alignItems='center' px={8} py={6}>
+      <VStack flex={1} bg="white" borderTopRadius="3xl">
+        <HStack justifyContent="center" alignItems="center" px={8} py={6}>
           <FlatList
             data={CATEGORIES}
             keyExtractor={(item: CategoryProps) => item.value}
@@ -111,111 +106,111 @@ export function Extract() {
         </HStack>
         <ScrollView flex={1} px={5} pb={8} showsVerticalScrollIndicator={false}>
           <Card
-            id='1'
-            label='Mercado'
-            type='down'
+            id="1"
+            label="Mercado"
+            type="down"
             category={CATEGORIES_ENUM.ALIMENTAÇÃO}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='2'
-            label='Investimento CDB'
-            type='invest'
+            id="2"
+            label="Investimento CDB"
+            type="invest"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='3'
-            label='Salário'
-            type='up'
+            id="3"
+            label="Salário"
+            type="up"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='1'
-            label='Mercado'
-            type='down'
+            id="1"
+            label="Mercado"
+            type="down"
             category={CATEGORIES_ENUM.ALIMENTAÇÃO}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='2'
-            label='Investimento CDB'
-            type='invest'
+            id="2"
+            label="Investimento CDB"
+            type="invest"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='3'
-            label='Salário'
-            type='up'
+            id="3"
+            label="Salário"
+            type="up"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='1'
-            label='Mercado'
-            type='down'
+            id="1"
+            label="Mercado"
+            type="down"
             category={CATEGORIES_ENUM.ALIMENTAÇÃO}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='2'
-            label='Investimento CDB'
-            type='invest'
+            id="2"
+            label="Investimento CDB"
+            type="invest"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='3'
-            label='Salário'
-            type='up'
+            id="3"
+            label="Salário"
+            type="up"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='1'
-            label='Mercado'
-            type='down'
+            id="1"
+            label="Mercado"
+            type="down"
             category={CATEGORIES_ENUM.ALIMENTAÇÃO}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='2'
-            label='Investimento CDB'
-            type='invest'
+            id="2"
+            label="Investimento CDB"
+            type="invest"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
-          <Divider mb={2} w='72' />
+          <Divider mb={2} />
           <Card
-            id='3'
-            label='Salário'
-            type='up'
+            id="3"
+            label="Salário"
+            type="up"
             category={CATEGORIES_ENUM.OUTROS}
             value={2000.0}
-            date='20/02/2024'
+            date="20/02/2024"
           />
         </ScrollView>
       </VStack>

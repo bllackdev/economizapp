@@ -2,7 +2,7 @@ import { Button as NBButton, IButtonProps } from "native-base";
 
 type ButtonProps = IButtonProps & {
   label?: string;
-  variant?: "solid" | "outline";
+  variant?: "solid" | "outline" | "ghost";
   isLoading?: boolean;
   icon?: JSX.Element[] | JSX.Element;
   bgColor?: string;
@@ -24,6 +24,7 @@ export function Button({
       isLoading={isLoading}
       leftIcon={icon}
       h={12}
+      pr={5}
       _icon={{
         marginRight: 4,
       }}
@@ -31,7 +32,7 @@ export function Button({
       _pressed={{
         bgColor: `${pressedBgColor}`,
       }}
-      borderRadius='2xl'
+      borderRadius="2xl"
       {...rest}
     >
       {label}

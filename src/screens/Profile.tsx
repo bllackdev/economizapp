@@ -1,16 +1,15 @@
 import { useRef, useState } from "react";
 import {
   Avatar,
+  Divider,
   HStack,
   Heading,
   Icon,
-  IconButton,
   Image,
-  Text,
   VStack,
   useToast,
 } from "native-base";
-import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import auth from "@react-native-firebase/auth";
 
@@ -18,6 +17,7 @@ import { useUserData } from "../hooks/useUserData";
 
 import { AlertModal } from "../components/AlertModal";
 import { Button } from "../components/Button";
+import { OptionProfile } from "../components/OptionProfile";
 
 import HiIcon from "../assets/hi.gif";
 
@@ -60,37 +60,41 @@ export function Profile() {
     <VStack flex={1} bg="gray.800">
       <VStack
         w="full"
+        space={2}
         px={8}
         py={5}
         justifyContent="center"
         alignItems="center"
       >
-        <Text color="white" fontWeight="bold" fontSize="2xl">
-          Perfil
-        </Text>
+        <Avatar
+          source={{ uri: photoURL }}
+          bgColor="blueGray.600"
+          size="xl"
+          borderColor="purple.500"
+          borderWidth={2}
+        >
+          RR
+        </Avatar>
+        <HStack space={2} alignItems="center" justifyContent="center" mr={6}>
+          <Image source={HiIcon} alt="gif de olá" w={6} h={6} />
+          <Heading color="gray.100" fontSize="lg" numberOfLines={1}>
+            {displayName}
+          </Heading>
+        </HStack>
       </VStack>
-      <VStack flex={1} px={8} bg="white" borderTopRadius="3xl">
-        <VStack space={2} py={4} alignItems="center">
-          <Avatar source={{ uri: photoURL }} bgColor="blueGray.600" size="xl">
-            RR
-          </Avatar>
-
-          <HStack space={1} alignItems="center" justifyContent="center" mr={6}>
-            <Image source={HiIcon} alt="gif de olá" w={6} h={6} />
-            <Text color="gray.800" fontSize="xs">
-              Olá,
-            </Text>
-            <Heading color="gray.800" fontSize="xs" numberOfLines={1}>
-              {displayName}
-            </Heading>
-          </HStack>
+      <VStack flex={1} px={8} pt={10} bg="white" borderTopRadius="3xl">
+        <VStack flex={1} alignItems="flex-start">
+          <OptionProfile label="Investimentos (Em Breve ...)" icon="signal" />
+          <Divider color="gray.800" mb={4} />
+          <OptionProfile label="Metas (Em Breve ...)" icon="crosshairs" />
+          <Divider color="gray.800" mb={4} />
+          <OptionProfile label="Categorias (Em Breve ...)" icon="th" />
+          <Divider color="gray.800" mb={4} />
+          <OptionProfile label="Configurações (Em Breve ...)" icon="gear" />
         </VStack>
-        <VStack flex={1} alignItems="center" pt={32}>
-          <Text color="gray.500" fontSize="xl">
-            Em breve...
-          </Text>
+        <VStack alignItems="center" py={4}>
           <Button
-            label="Sair da conta"
+            label="Desconectar"
             bgColor="gray.800"
             pressedBgColor="gray.700"
             isLoading={isLogging}
