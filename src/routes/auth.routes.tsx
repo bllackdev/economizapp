@@ -5,12 +5,12 @@ import {
 
 import { SignIn } from "../screens/SignIn";
 
-type AuthRoutesParamList = {
+type AuthRoutes = {
   signIn: undefined;
 };
 
-export type AuthNavigatorRoutesProps =
-  NativeStackNavigationProp<AuthRoutesParamList>;
+export type Props =
+  NativeStackNavigationProp<AuthRoutes>;
 
 const { Navigator, Screen } = createNativeStackNavigator();
 

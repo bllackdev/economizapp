@@ -6,7 +6,7 @@ import { getLabelMonth } from "../functions/getLabelMonth";
 import { EXPENSES } from "../utils/expenses";
 import { CardProps } from "../domains/CardProps";
 
-import { AppUserRoutesParamListProps } from "../routes/app.user.routes";
+import { AppUserRoutesParamListProps } from "../routes/tab.user.routes";
 
 import { Card } from "./Card";
 import { Empty } from "./Empty";

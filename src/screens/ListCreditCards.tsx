@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { Heading, ScrollView, Text, VStack } from "native-base";
-import BottomSheet, { BottomSheetModal } from "@gorhom/bottom-sheet";
+import BottomSheet from "@gorhom/bottom-sheet";
 
 import { CreditCardProgress } from "../components/CreditCardProgress";
 import { MenuCreditCards } from "../components/MenuCreditCards";
 
-export function CreditCards() {
+export function ListCreditCards() {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   const handleMenuBottomSheetOpen = () => bottomSheetRef.current?.expand();

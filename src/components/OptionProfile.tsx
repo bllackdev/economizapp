@@ -17,8 +17,8 @@ export function OptionProfile({ label, icon, ...rest }: Props) {
       {...rest}
     >
       <HStack space={4} alignItems="center">
-        <Icon as={FontAwesome} name={icon} color="gray.800" size={7} />
-        <Text fontSize="md" color="gray.800" fontWeight="semibold">
+        <Icon as={FontAwesome} name={icon} color="gray.800" size={6} />
+        <Text fontSize="sm" color="gray.800" fontWeight="semibold">
           {label}
         </Text>
       </HStack>

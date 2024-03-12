@@ -6,15 +6,10 @@ import {
   Image,
   Text,
   VStack,
-  IconButton,
   useToast,
 } from "native-base";
 import { FontAwesome } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
 import auth from "@react-native-firebase/auth";
-import { AuthNavigatorRoutesProps } from "../routes/auth.routes";
-
-import { useAuth } from "../hooks/auth";
 
 import { Button } from "../components/Button";
 
@@ -58,7 +53,6 @@ export function SignIn() {
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
       console.log("GOOGLE CREDENTIAL: ", googleCredential);
-      console.log("USER>>>>>>>>>: ", user);
       // Sign-in the user with the credential
       return auth().signInWithCredential(googleCredential);
     } catch (error) {
@@ -106,38 +100,38 @@ export function SignIn() {
   return (
     <VStack
       flex={1}
-      alignItems='center'
-      justifyContent='space-around'
-      bg='gray.800'
+      alignItems="center"
+      justifyContent="space-around"
+      bg="gray.800"
       p={12}
     >
-      <Image source={AppIcon} alt='Logo do App' mb='12' w='48' h='32' />
+      <Image source={AppIcon} alt="Logo do App" mb="12" w="48" h="32" />
 
-      <VStack h='55%' justifyContent='space-around'>
-        <Heading color='gray.200' textAlign='center'>
+      <VStack h="55%" justifyContent="space-around">
+        <Heading color="gray.200" textAlign="center">
           Suas finanças em um só lugar
         </Heading>
 
         <Box>
-          <Text color='gray.200' textAlign='center' mb='10'>
+          <Text color="gray.200" textAlign="center" mb="10">
             Faça seu login com {`\n`}a opção abaixo
           </Text>
 
-          <VStack space='4'>
+          <VStack space="4">
             <Button
-              label='Entrar com Google'
-              icon={<FontAwesome name='google' size={24} color='white' />}
-              bgColor='purple.500'
-              pressedBgColor='purple.500'
+              label="Entrar com Google"
+              icon={<FontAwesome name="google" size={24} color="white" />}
+              bgColor="purple.500"
+              pressedBgColor="purple.500"
               onPress={() => handleSignIn()}
               isLoading={isLogging}
             />
             {Platform.OS === "ios" ? (
               <Button
-                label='Entrar com Apple'
-                icon={<FontAwesome name='apple' size={24} color='white' />}
-                bgColor='purple.500'
-                pressedBgColor='purple.500'
+                label="Entrar com Apple"
+                icon={<FontAwesome name="apple" size={24} color="white" />}
+                bgColor="purple.500"
+                pressedBgColor="purple.500"
               />
             ) : null}
           </VStack>
