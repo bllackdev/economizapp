@@ -26,7 +26,7 @@ export function Button({
       h={12}
       pr={5}
       _icon={{
-        marginRight: 4,
+        marginRight: 2,
       }}
       bgColor={bgColor}
       _pressed={{

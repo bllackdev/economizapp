@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { HStack, Heading, Icon, useToken } from "native-base";
-import BottomSheet, { BottomSheetModal } from "@gorhom/bottom-sheet";
+import BottomSheet from "@gorhom/bottom-sheet";
 import { AntDesign } from "@expo/vector-icons";
 import { Portal, PortalHost } from "@gorhom/portal";
 
@@ -42,17 +42,17 @@ export const MenuCreditCards = forwardRef<BottomSheet, Props>(
             <HStack w="full" justifyContent="center" space={6}>
               <MenuButton
                 title="Editar"
-                icon="file-edit-outline"
+                iconName="file-edit-outline"
                 color={purple500}
               />
               <MenuButton
                 title="Fatura"
-                icon="newspaper-variant-multiple-outline"
+                iconName="newspaper-variant-multiple-outline"
                 color={green500}
               />
               <MenuButton
                 title="Deletar"
-                icon="delete-forever-outline"
+                iconName="delete-forever-outline"
                 color={red500}
               />
             </HStack>
