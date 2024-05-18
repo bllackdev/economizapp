@@ -1,20 +1,21 @@
 import "../styles/global.css";
 
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
+import { useEffect } from "react";
+
+import { useFonts } from "expo-font";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from 'react';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import 'react-native-reanimated';
+import "react-native-reanimated";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    "Roboto-Regular": require('../../assets/fonts/Roboto-Regular.ttf'),
-    "Roboto-Medium": require('../../assets/fonts/Roboto-Medium.ttf'),
-    "Roboto-Bold": require('../../assets/fonts/Roboto-Bold.ttf'),
+    "Roboto-Regular": require("../../assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Medium": require("../../assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Bold": require("../../assets/fonts/Roboto-Bold.ttf"),
   });
 
   useEffect(() => {
@@ -38,9 +39,10 @@ function RootLayoutNav() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar style="light" />
-      <Stack screenOptions={{headerShown: false}}>
-        <Stack.Screen name="index"  />
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="signin" />
       </Stack>
-      </GestureHandlerRootView>
+    </GestureHandlerRootView>
   );
 }

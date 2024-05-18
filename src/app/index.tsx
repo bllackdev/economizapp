@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { Mail, UserRoundPlus } from "lucide-react-native";
 import { Platform, Text, View } from "react-native";
 
@@ -31,6 +32,9 @@ export default function Home() {
           className="bg-violet-500"
           icon={<Mail width={24} height={24} color={colors.white} />}
           testID="button-login-google"
+          onPress={() => {
+            router.navigate("/signin");
+          }}
         />
         <Button
           label="Acessar com Google"

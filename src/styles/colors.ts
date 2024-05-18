@@ -22,4 +22,7 @@ export const colors = {
   blue: {
     700: "#1877f2",
   },
+  violet: {
+    500: "#8b5cf6",
+  },
 };
