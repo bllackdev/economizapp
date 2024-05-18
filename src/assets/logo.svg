@@ -1,0 +1,42 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="220" height="220" rx="110" fill="#8B5CF6"/>
+<ellipse cx="134" cy="111.964" rx="62" ry="60.8929" fill="#252525"/>
+<rect x="28.5" y="66.5" width="86" height="17" rx="6.5" fill="#252525" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="88.5" y1="68.9286" x2="88.5" y2="80.7143" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="64.5" y1="68.9286" x2="64.5" y2="80.7143" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="40.5" y1="68.9286" x2="40.5" y2="80.7143" stroke="#8B5CF6" stroke-width="3"/>
+<path d="M103 68.9286V80.7143" stroke="#8B5CF6" stroke-width="3"/>
+<rect x="29" y="87" width="61" height="15.5" rx="6" fill="#8B5CF6" stroke="#252525" stroke-width="4"/>
+<line x1="79" y1="88.6654" x2="79" y2="100.761" stroke="#252525" stroke-width="4"/>
+<line x1="59" y1="88.6654" x2="59" y2="100.761" stroke="#252525" stroke-width="4"/>
+<line x1="39" y1="88.6654" x2="39" y2="100.761" stroke="#252525" stroke-width="4"/>
+<rect x="28.5" y="105.786" width="86" height="16.6429" rx="6.5" fill="#252525" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="81.9" y1="108.214" x2="81.9" y2="120" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="60.54" y1="108.214" x2="60.54" y2="120" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="39.1801" y1="108.214" x2="39.1801" y2="120" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="103.26" y1="108.214" x2="103.26" y2="120" stroke="#8B5CF6" stroke-width="3"/>
+<rect x="29" y="125.929" width="61" height="15.6429" rx="6" fill="#8B5CF6" stroke="#252525" stroke-width="4"/>
+<line x1="79.5" y1="127.857" x2="79.5" y2="139.643" stroke="#252525" stroke-width="4"/>
+<line x1="58.8999" y1="127.857" x2="58.8999" y2="139.643" stroke="#252525" stroke-width="4"/>
+<line x1="39.3" y1="127.857" x2="39.3" y2="139.643" stroke="#252525" stroke-width="4"/>
+<rect x="28.5" y="145.071" width="86" height="16.6429" rx="6.5" fill="#252525" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="81.9" y1="147.5" x2="81.9" y2="159.286" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="60.54" y1="147.5" x2="60.54" y2="159.286" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="39.1801" y1="147.5" x2="39.1801" y2="159.286" stroke="#8B5CF6" stroke-width="3"/>
+<line x1="103.26" y1="147.5" x2="103.26" y2="159.286" stroke="#8B5CF6" stroke-width="3"/>
+<g filter="url(#filter0_i_64778_637)">
+<path d="M157.429 82V134.686H163V82H157.429ZM146.286 88.5857V134.686H151.857V88.5857H146.286ZM135.143 101.757V134.686H140.714V101.757H135.143ZM124 114.929V134.686H129.571V114.929H124Z" fill="#8B5CF6"/>
+</g>
+<defs>
+<filter id="filter0_i_64778_637" x="124" y="82" width="39" height="56.6857" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_64778_637"/>
+</filter>
+</defs>
+</svg>
