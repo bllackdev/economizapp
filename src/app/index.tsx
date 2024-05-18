@@ -73,6 +73,9 @@ export default function Home() {
           className="bg-violet-500"
           icon={<UserRoundPlus width={24} height={24} color={colors.white} />}
           testID="button-login-signup"
+          onPress={() => {
+            router.navigate("/signup");
+          }}
         />
       </View>
     </View>
