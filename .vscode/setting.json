@@ -16,7 +16,7 @@
         }
     ],
     "eslint.options": {
-        "overrideConfigFile": "./eslint.json"
+        "overrideConfigFile": "./.eslintrc.js"
     },
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit",

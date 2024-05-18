@@ -1,6 +1,9 @@
 module.exports = {
   root: true,
-  extends: ['universe/native', "expo", "prettier"],
+  extends: ["expo", "eslint-config-prettier"],
+  "plugins": [
+    "eslint-plugin-prettier"
+  ],
   rules: {
     'import/order': [
       'warn',
