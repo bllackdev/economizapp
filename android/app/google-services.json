@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "573012855251",
+    "project_id": "economizapp-bllackdev",
+    "storage_bucket": "economizapp-bllackdev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573012855251:android:0ed4d225547606e5c5c726",
+        "android_client_info": {
+          "package_name": "com.bllackdev.economizapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx8vmAfaXRBi3jnfIXu6f-7Patc5SlJng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
