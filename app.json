@@ -13,19 +13,31 @@
       "backgroundColor": "#252525"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#252525"
-      }
+        "backgroundColor": "#252525",
+        "googleServicesFile": "./google-services.json"
+      },
+      "package": "com.bllackdev.economizapp"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "@react-native-google-signin/google-signin"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ab830e92-6220-4399-be39-a689175c0cfd"
+      }
     }
   }
 }

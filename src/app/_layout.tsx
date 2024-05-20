@@ -2,14 +2,20 @@ import "../styles/global.css";
 
 import { useEffect } from "react";
 
+import "react-native-reanimated";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import "react-native-reanimated";
 
 SplashScreen.preventAutoHideAsync();
+
+GoogleSignin.configure({
+  webClientId:
+    "573012855251-9r0nem6hco1jhf6l3sfkpivcf522qq83.apps.googleusercontent.com",
+});
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({

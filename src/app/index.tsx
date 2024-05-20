@@ -15,7 +15,7 @@ export default function Home() {
       <View className="mb-4 mt-10 items-center justify-center gap-2">
         <LogoImg width={130} height={130} />
         <Text className="text-center font-body text-4xl text-white">
-          Economizapp
+          EconomizApp
         </Text>
       </View>
       <View className="mb-6 items-center justify-center gap-3">
