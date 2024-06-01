@@ -5,16 +5,17 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
+import { AuthProvider } from "@/contexts/auth";
+
 SplashScreen.preventAutoHideAsync();
 
 GoogleSignin.configure({
-  webClientId:
-    "573012855251-9r0nem6hco1jhf6l3sfkpivcf522qq83.apps.googleusercontent.com",
+  webClientId: process.env.EXPO_PUBLIC_WEB_CLIENT_ID,
 });
 
 export default function RootLayout() {
@@ -45,11 +46,9 @@ function RootLayoutNav() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar style="light" />
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
-        <Stack.Screen name="signin" />
-        <Stack.Screen name="signup" />
-      </Stack>
+      <AuthProvider>
+        <Slot />
+      </AuthProvider>
     </GestureHandlerRootView>
   );
 }

@@ -7,9 +7,12 @@ import FacebookIcon from "@/assets/logo-facebook.svg";
 import GoogleIcon from "@/assets/logo-google.svg";
 import LogoImg from "@/assets/logo.svg";
 import { Button } from "@/components/Button";
+import { useAuth } from "@/contexts/auth";
 import { colors } from "@/styles/colors";
 
-export default function Home() {
+export default function Login() {
+  const { signInGoogle } = useAuth();
+
   return (
     <View className="flex-1 items-center justify-between bg-gray-600 p-8">
       <View className="mb-4 mt-10 items-center justify-center gap-2">
@@ -31,16 +34,20 @@ export default function Home() {
           label="Acessar com E-mail"
           className="bg-violet-500"
           icon={<Mail width={24} height={24} color={colors.white} />}
-          testID="button-login-google"
+          testID="button-login-email"
           onPress={() => {
             router.navigate("/signin");
           }}
         />
+
         <Button
           label="Acessar com Google"
           className="bg-red-600"
           icon={<GoogleIcon width={24} height={24} />}
           testID="button-login-google"
+          onPress={() => {
+            signInGoogle();
+          }}
         />
 
         <Button
