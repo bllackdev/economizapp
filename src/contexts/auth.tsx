@@ -37,6 +37,7 @@ function AuthProvider({ children }: AuthProviderProps) {
       .then(() => {
         setUser(userInfo);
         router.navigate("(tabs)");
+        console.log("user>>> ", user);
       })
       .catch((error) => {
         const errorCode = error.code;

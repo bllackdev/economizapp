@@ -50,13 +50,6 @@ export default function Login() {
           }}
         />
 
-        <Button
-          label="Acessar com Facebook"
-          className="bg-blue-700"
-          icon={<FacebookIcon width={24} height={24} />}
-          testID="button-login-facebook"
-        />
-
         {Platform.OS === "ios" && (
           <Button
             label="Acessar com Apple"

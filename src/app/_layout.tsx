@@ -10,7 +10,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import { AuthProvider } from "@/contexts/auth";
+import { AuthProvider, useAuth } from "@/contexts/auth";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,11 +43,13 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+  const { user } = useAuth();
+  console.log("User: ", user);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <StatusBar style="light" />
       <AuthProvider>
-        <Slot />
+        <Slot initialRouteName={user ? "(tabs)" : "(auth)"} />
       </AuthProvider>
     </GestureHandlerRootView>
   );
