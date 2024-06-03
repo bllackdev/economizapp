@@ -10,7 +10,7 @@ export default function Header() {
   const { user } = useAuth();
 
   return (
-    <View className=" mb-2 flex w-full flex-row items-center justify-between">
+    <View className=" mb-2 flex w-full flex-row items-center justify-between pb-14">
       <View className="flex flex-row gap-3">
         <Avatar>
           <AvatarImage
