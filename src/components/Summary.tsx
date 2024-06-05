@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import {
   Calculator,
   CalendarDays,
@@ -12,9 +10,12 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 import { colors } from "@/styles/colors";
 
-export default function Summary() {
-  const [isVisible, setIsVisible] = useState(false);
+type Props = {
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
+export default function Summary({ isVisible, setIsVisible }: Props) {
   return (
     <View className="mb-8 min-h-56 w-[330px] rounded-3xl bg-gray-100 p-6 shadow-xl shadow-violet-500 ">
       <View className="flex flex-row items-center justify-between">
@@ -51,7 +52,7 @@ export default function Summary() {
               <Text className="font-body text-red-700">Despesas</Text>
             </View>
             <Text className="line-clamp-1 font-subtitle text-red-700">
-              R$ 2.000,24
+              R$ {isVisible ? "2.000,24" : "****"}
             </Text>
           </View>
           <View className="min-w-36 max-w-40 items-center justify-center gap-3 rounded-2xl bg-green-300 px-4 py-3">
@@ -64,7 +65,7 @@ export default function Summary() {
               <Text className="font-body text-green-700">Receitas</Text>
             </View>
             <Text className="line-clamp-1 font-subtitle text-green-700">
-              R$ 3.000,48
+              R$ {isVisible ? "3.000,48" : "****"}
             </Text>
           </View>
         </View>
@@ -79,7 +80,7 @@ export default function Summary() {
               <Text className="font-body text-violet-500">SALDO</Text>
             </View>
             <Text className=" line-clamp-1 font-subtitle text-violet-500">
-              R$ 600,24
+              R$ {isVisible ? "600,24" : "****"}
             </Text>
           </View>
         </View>

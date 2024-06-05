@@ -18,14 +18,9 @@ export default function Home() {
 
       <View className="w-full flex-1 items-center justify-center bg-gray-100 pt-3">
         <QuickMenu />
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={{
-            width: "100%",
-          }}
-        >
-          <View className="mb-28 items-center justify-center pt-3">
-            <Summary />
+        <ScrollView showsVerticalScrollIndicator={false} className="w-full">
+          <View className="items-center justify-center pb-28 pt-3">
+            <Summary isVisible={isVisible} setIsVisible={setIsVisible} />
             <CreditCardMenu isVisible={isVisible} />
           </View>
         </ScrollView>

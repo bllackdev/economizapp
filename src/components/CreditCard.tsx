@@ -9,6 +9,7 @@ type Props = {
   dueDate: number;
   currentValue: number;
   limitValue: number;
+  isVisible: boolean;
 };
 
 export default function CreditCard({
@@ -17,12 +18,13 @@ export default function CreditCard({
   currentValue,
   dueDate,
   limitValue,
+  isVisible,
 }: Props) {
   const percentValue = (currentValue * 100) / limitValue;
   const percentValueFormatted = Number(percentValue.toFixed(0));
 
   return (
-    <View className="items-center justify-center gap-3 rounded-2xl py-3">
+    <View className="items-center gap-3 rounded-2xl border border-gray-200/50 p-3">
       <View className="flex w-full flex-row items-center justify-between">
         <View className="flex flex-row items-center gap-3">
           <Avatar className="h-8 w-8">
@@ -36,11 +38,13 @@ export default function CreditCard({
       </View>
       <View className="flex flex-row items-center justify-between gap-3">
         <Text className="font-body text-sm text-gray-300">
-          R$ {currentValue},00
+          R$ {isVisible ? `${currentValue},00` : "****"}
         </Text>
-        <Progress value={percentValueFormatted} className="w-2/4" />
+        <View className="flex-1">
+          <Progress value={percentValueFormatted} />
+        </View>
         <Text className="font-body text-sm text-gray-300">
-          R$ {limitValue},00
+          R$ {isVisible ? `${limitValue},00` : "****"}
         </Text>
       </View>
     </View>
