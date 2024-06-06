@@ -5,7 +5,7 @@ import { colors } from "@/styles/colors";
 
 export default function QuickMenu() {
   return (
-    <View className="-mt-12 mb-3 flex w-[330px] flex-row items-center justify-around rounded-3xl bg-gray-100 px-6 py-3 shadow-xl shadow-violet-500">
+    <View className="-mt-12 mb-3 flex w-[330px] flex-row items-center justify-around rounded-3xl bg-gray-50 px-6 py-3 shadow-xl shadow-violet-500">
       <View className="items-center justify-center">
         <TouchableOpacity
           onPress={() => {}}

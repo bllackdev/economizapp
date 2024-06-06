@@ -17,7 +17,7 @@ type Props = {
 
 export default function Summary({ isVisible, setIsVisible }: Props) {
   return (
-    <View className="mb-8 min-h-56 w-[330px] rounded-3xl bg-gray-100 p-6 shadow-xl shadow-violet-500 ">
+    <View className="-mt-14 mb-5 min-h-56 w-[330px] rounded-3xl bg-gray-50 p-6 shadow-xl shadow-violet-500 ">
       <View className="flex flex-row items-center justify-between">
         <View className="flex flex-row items-center">
           <CalendarDays color={colors.gray[300]} size={20} />
@@ -30,12 +30,12 @@ export default function Summary({ isVisible, setIsVisible }: Props) {
           onPress={() => {
             setIsVisible((prev) => !prev);
           }}
-          className="rounded-xl bg-gray-200 p-1"
+          className="rounded-xl bg-gray-100 p-2"
         >
           {isVisible ? (
-            <EyeOff color={colors.gray[300]} size={24} strokeWidth={1.5} />
+            <EyeOff color={colors.gray[300]} size={18} strokeWidth={1.5} />
           ) : (
-            <Eye color={colors.gray[300]} size={24} strokeWidth={1.5} />
+            <Eye color={colors.gray[300]} size={18} strokeWidth={1.5} />
           )}
         </TouchableOpacity>
       </View>
