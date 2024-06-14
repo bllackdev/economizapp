@@ -3,7 +3,6 @@ import { Mail, UserRoundPlus } from "lucide-react-native";
 import { Platform, Text, View } from "react-native";
 
 import AppleIcon from "@/assets/logo-apple.svg";
-import FacebookIcon from "@/assets/logo-facebook.svg";
 import GoogleIcon from "@/assets/logo-google.svg";
 import LogoImg from "@/assets/logo.svg";
 import { Button } from "@/components/Button";

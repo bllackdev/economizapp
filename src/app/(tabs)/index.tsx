@@ -4,7 +4,6 @@ import { ScrollView, View } from "react-native";
 
 import CreditCardMenu from "@/components/CreditCardMenu";
 import Header from "@/components/Header";
-// import QuickMenu from "@/components/QuickMenu";
 import NextPayments from "@/components/NextPayments";
 import Summary from "@/components/Summary";
 
@@ -17,8 +16,7 @@ export default function Home() {
         <Header />
       </View>
 
-      <View className="w-full flex-1 items-center justify-center bg-gray-50 pt-3">
-        {/* <QuickMenu /> */}
+      <View className="w-full flex-1 items-center justify-center bg-gray-100 pt-3">
         <Summary isVisible={isVisible} setIsVisible={setIsVisible} />
         <ScrollView showsVerticalScrollIndicator={false} className="w-full">
           <View className="items-center justify-center pb-28 pt-3">

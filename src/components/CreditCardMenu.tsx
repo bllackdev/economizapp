@@ -13,7 +13,7 @@ type Props = {
 
 export default function CreditCardMenu({ isVisible }: Props) {
   return (
-    <View className="mb-8 h-auto min-h-56 w-[330px] rounded-3xl bg-gray-50 p-6 shadow-xl shadow-violet-500 ">
+    <View className="mb-8 h-auto min-h-56 w-[330px] rounded-3xl bg-gray-50 p-6 shadow-xl shadow-violet-500">
       <View className="flex flex-row items-center justify-between">
         <View className="flex flex-row items-center">
           <CreditCardIcon color={colors.gray[300]} size={20} />

@@ -17,7 +17,7 @@ type Props = {
 
 export default function Summary({ isVisible, setIsVisible }: Props) {
   return (
-    <View className="-mt-14 mb-5 min-h-56 w-[330px] rounded-3xl bg-gray-50 p-6 shadow-xl shadow-violet-500 ">
+    <View className="-mt-14 mb-5 min-h-56 w-[330px] rounded-3xl bg-gray-50 p-6 shadow-xl shadow-violet-500">
       <View className="flex flex-row items-center justify-between">
         <View className="flex flex-row items-center">
           <CalendarDays color={colors.gray[300]} size={20} />
